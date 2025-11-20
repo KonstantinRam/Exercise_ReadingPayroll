@@ -100,4 +100,3 @@ OPS: 5 employees
 - [ ] Produces formatted report file
 - [ ] Summary totals are accurate
 - [ ] Code follows COBOL standards (no warnings)
-```
