@@ -6,6 +6,10 @@
                FILE-CONTROL.
                    SELECT PAYROLL-FILE ASSIGN TO "PAYROLL.DAT"
                    ORGANIZATION IS SEQUENTIAL
+      *>           Bug was in Payroll.dat format. CRLF + missing FILLER PADDING at the END.
+      *>           Added LINE SEQUENTIAL version FOR ORGANIZATION IS LINE SEQUENTIAL for Windows style, but we for this project 
+      *>           I follow  mainframe style.
+      *>           Another bug => missing 0 in from of rates.
                    FILE STATUS IS WS-FILE-STATUS. 
                
                DATA DIVISION.
@@ -26,7 +30,11 @@
                    05  WS-FIRSTNAME-X    PIC X(15).
                    05  WS-DEPT-X         PIC X(3).
                    05  WS-HOURS-X        PIC X(4).
+                   05  WS-HOURS-X-NUM REDEFINES WS-HOURS-X PIC 9(3)V9.
+      *>           Bug was here. I have TO redifine VALUE instead OF MOVE directly.
+      *>           direct move was turning 0500 into 500.0 instead of 50.0
                    05  WS-RATE-X         PIC X(5).
+                   05  WS-RATE-X-NUM REDEFINES WS-RATE-X PIC 9(3)V99.
                    05  WS-HIRE-DATE-X    PIC X(6).
                    05  FILLER            PIC X(19).
  
@@ -71,9 +79,12 @@
                PROCEDURE DIVISION.
                    DISPLAY "Execution started"
                    OPEN INPUT PAYROLL-FILE
-                   PERFORM 1000-PROCESS-FILE
-                   PERFORM 1100-DISPLAY-RECORD-DEBUG-CONDITIONAL
-       
+                   
+                   PERFORM UNTIL FILE-EOF
+                       PERFORM 1000-PROCESS-FILE
+                       PERFORM 1100-DISPLAY-RECORD-DEBUG-CONDITIONAL
+                   END-PERFORM
+
                    CLOSE PAYROLL-FILE
                    DISPLAY "Execution stopped"
                    STOP RUN.
@@ -161,7 +172,6 @@
                           INTO WS-ERROR-BUFFER
                           WITH POINTER WS-ERROR-PTR
                    END-STRING
-
                    MOVE WS-EMP-ID-X TO WS-EMP-ID
                    MOVE WS-LASTNAME-X TO WS-LASTNAME
                    MOVE WS-FIRSTNAME-X TO WS-FIRSTNAME
@@ -169,7 +179,7 @@
       *> Here could be checks for wrong names or non existing departments, but checking NUMERIC corruption is enough IMHO for training task.
 
                    IF WS-HOURS-X IS NUMERIC
-                       MOVE WS-HOURS-X TO WS-HOURS
+                       MOVE WS-HOURS-X-NUM TO WS-HOURS
                    ELSE
                        MOVE ZERO TO WS-HOURS
     
@@ -183,7 +193,7 @@
                    END-IF
                    
                    IF WS-RATE-X IS NUMERIC
-                       MOVE WS-RATE-X TO WS-RATE
+                       MOVE WS-RATE-X-NUM TO WS-RATE
                    ELSE
                        ADD 1 TO WS-ERROR-COUNT
                        STRING " [RATE:" WS-RATE-X "]"
@@ -205,7 +215,6 @@
                    IF WS-ERROR-COUNT > ZERO
                        SET RECORD-INVALID TO TRUE
                        PERFORM 2000-WRITE-VALIDATION-ERROR
-                   END-IF
                .
 
                2000-WRITE-VALIDATION-ERROR.
