@@ -5,7 +5,7 @@
                INPUT-OUTPUT SECTION.
                FILE-CONTROL.
                    SELECT PAYROLL-FILE ASSIGN TO "PAYROLL.DAT"
-                   ORGANIZATION IS LINE SEQUENTIAL
+                   ORGANIZATION IS SEQUENTIAL
                    FILE STATUS IS WS-FILE-STATUS. 
                
                DATA DIVISION.
@@ -129,8 +129,8 @@
                1200-CREATE-RECORD-DSP.
                    INITIALIZE WS-RECORD-DSP
                    MOVE WS-EMP-ID TO WS-EMP-ID-DSP
-                   MOVE WS-LASTNAME(1:15) TO WS-LASTNAME-DSP
-                   MOVE WS-FIRSTNAME(1:10) TO WS-FIRSTNAME-DSP
+                   MOVE WS-LASTNAME TO WS-LASTNAME-DSP
+                   MOVE WS-FIRSTNAME TO WS-FIRSTNAME-DSP
                    MOVE WS-DEPT TO WS-DEPT-DSP
                    MOVE WS-HOURS TO WS-HOURS-DSP
                    MOVE WS-RATE TO WS-RATE-DSP
