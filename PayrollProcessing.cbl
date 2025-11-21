@@ -31,16 +31,31 @@
                    05  FILLER            PIC X(19).
  
                01  WS-VALIDATED-RECORD.
-                   05  WS-EMP-ID         PIC X(8) VALUE 'BLANC'.
-                   05  WS-LASTNAME       PIC X(20) VALUE 'BLANC'.
-                   05  WS-FIRSTNAME      PIC X(15) VALUE 'BLANC'.
-                   05  WS-DEPT           PIC X(3) VALUE SPACES.
-                   05  WS-HOURS          PIC 9(3)V9 VALUE ZEROS.
-                   05  WS-RATE           PIC 9(3)V99 VALUE ZEROS.
-                   05  WS-HIRE-DATE      PIC 9(6) VALUE SPACES.
-                   05  WS-RECORD-STATUS  PIC X VALUE 'N'.
+                   05  WS-EMP-ID             PIC X(8) VALUE 'BLANC'.
+                   05  WS-LASTNAME           PIC X(20) VALUE 'BLANC'.
+                   05  WS-FIRSTNAME          PIC X(15) VALUE 'BLANC'.
+                   05  WS-DEPT               PIC X(3) VALUE SPACES.
+                   05  WS-HOURS              PIC 9(3)V9 VALUE 0.
+                   05  WS-RATE               PIC 9(3)V99 VALUE ZEROS.
+                   05  WS-HIRE-DATE          PIC 9(6) VALUE 000000.
+                   05  WS-RECORD-STATUS      PIC X VALUE 'N'.
                        88  RECORD-VALID      VALUE 'Y'.
                        88  RECORD-INVALID    VALUE 'N'.
+
+               01  WS-RECORD-DSP.
+                   05  WS-EMP-ID-DSP         PIC X(8) VALUE 'BLANC'.
+                   05  WS-LASTNAME-DSP       PIC X(20) VALUE 'BLANC'.
+                   05  WS-FIRSTNAME-DSP      PIC X(15) VALUE 'BLANC'.
+                   05  WS-DEPT-DSP           PIC X(3) VALUE SPACES.
+                   05  WS-HOURS-DSP          PIC Z9.9 VALUE 0.
+                   05  WS-RATE-DSP           PIC $$$,$$9.99 VALUE 0.
+                   05  WS-HIRE-DATE-DSP      PIC X(8) VALUE SPACES.
+
+               01 WS-CALCULATED-PAY.
+                   05 WS-HR-OVERTIME         PIC 9(3)V9 VALUE 0.
+
+               01 WS-PAYROLL-DSP.
+                   05 WS-HR-OVERTIME-DSP     PIC Z9.9 VALUE 0.
 
                01 WS-FILE-STATUS               PIC XX.
                   88 FILE-OK                   VALUE "00".
@@ -49,14 +64,15 @@
 
                01 WS-DISPLAY-LINE              PIC X(80) VALUE SPACES.
                01  WS-ERROR-ACCUMULATOR.
-                   05  WS-ERROR-BUFFER       PIC X(500) VALUE SPACES.
-                   05  WS-ERROR-PTR          PIC 999 VALUE 1.
-                   05  WS-ERROR-COUNT        PIC 99 VALUE ZERO.
+                   05  WS-ERROR-BUFFER         PIC X(500) VALUE SPACES.
+                   05  WS-ERROR-PTR            PIC 999 VALUE 1.
+                   05  WS-ERROR-COUNT          PIC 99 VALUE ZERO.
 
                PROCEDURE DIVISION.
-
+                   DISPLAY "Execution started"
                    PERFORM 1000-PROCESS-FILE
                    PERFORM 1100-DISPLAY-RECORD-DEBUG-CONDITIONAL
+       
                    DISPLAY "Execution stopped"
                    STOP RUN.
 
@@ -78,34 +94,62 @@
 
                1100-DISPLAY-RECORD-DEBUG-CONDITIONAL.
                    IF DEBUG-ON
-                       PERFORM 1110-DISPLAY-PAYROLL-RECORD
+                       PERFORM 1110-DISPLAY-PAYROLL-RECORD-DEBUG
                    END-IF
                .
 
-               1110-DISPLAY-PAYROLL-RECORD.
+               1110-DISPLAY-PAYROLL-RECORD-DEBUG.
+                   PERFORM 1200-CREATE-RECORD-DSP
+                   PERFORM 1300-CALCULATE-PAYROLL
+                   PERFORM 1400-CREATE-PAYROLL-DSP
+
                    DISPLAY " "
-                   DISPLAY "EMP-ID: " WS-EMP-ID 
-                   " [" WS-LASTNAME(1:15) ", " 
-                   WS-FIRSTNAME(1:10) "]"
+                   DISPLAY "EMP-ID: " WS-EMP-ID-DSP 
+                   " [" WS-LASTNAME-DSP ", " 
+                   WS-FIRSTNAME-DSP "]"
     
                    MOVE SPACES TO WS-DISPLAY-LINE
-                   STRING "Dept: " WS-DEPT 
+                   STRING "Dept: " WS-DEPT-DSP 
                           "  Hours: " WS-HOURS-DSP
-                          "  Rate: $" WS-RATE-DSP 
-                          "  Hired: " WS-HIRE-DATE(1:4) "/"
-                                      WS-HIRE-DATE(5:2) "/"
-                                      WS-HIRE-DATE(7:2)
+                          "  Rate: " WS-RATE-DSP 
+                          "  Hired: " WS-HIRE-DATE-DSP
                           DELIMITED BY SIZE
                           INTO WS-DISPLAY-LINE
                    DISPLAY WS-DISPLAY-LINE
     
-                   IF WS-HOURS > C-WORK-HR-BASE
-                       COMPUTE WS-OVERTIME = WS-HOURS - C-WORK-HR-BASE
-                       DISPLAY "  ** OVERTIME: " WS-OVERTIME " hours **"
+                   IF WS-HR-OVERTIME > 0
+                       
+                       DISPLAY "  ** OVERTIME: "
+                               WS-HR-OVERTIME " hours **"
                    END-IF
                .
                
-               2000-VALIDATE-AND-MOVE
+               1200-CREATE-RECORD-DSP.
+                   INITIALIZE WS-RECORD-DSP
+                   MOVE WS-EMP-ID TO WS-EMP-ID-DSP
+                   MOVE WS-LASTNAME(1:15) TO WS-LASTNAME-DSP
+                   MOVE WS-FIRSTNAME(1:10) TO WS-FIRSTNAME-DSP
+                   MOVE WS-DEPT TO WS-DEPT-DSP
+                   MOVE WS-HOURS TO WS-HOURS-DSP
+                   MOVE WS-RATE TO WS-RATE-DSP
+                   STRING WS-HIRE-DATE(1:2) "/"
+                          WS-HIRE-DATE(3:2) "/"
+                          WS-HIRE-DATE(5:2)
+                          DELIMITED BY SIZE
+                          INTO WS-HIRE-DATE-DSP
+                   END-STRING
+               .
+
+               1300-CALCULATE-PAYROLL.
+                   INITIALIZE WS-CALCULATED-PAY
+                   COMPUTE WS-HR-OVERTIME = WS-HOURS - C-WORK-HR-BASE
+               .
+
+               1400-CREATE-PAYROLL-DSP.
+                   INITIALIZE WS-PAYROLL-DSP
+                   MOVE WS-HR-OVERTIME TO WS-HR-OVERTIME-DSP
+               .
+               2000-VALIDATE-AND-MOVE.
                    INITIALIZE WS-VALIDATED-RECORD
                    INITIALIZE WS-ERROR-ACCUMULATOR
                    
@@ -148,7 +192,6 @@
     
                    IF WS-HIRE-DATE-X IS NUMERIC
                        MOVE WS-HIRE-DATE-X TO WS-HIRE-DATE
-                       PERFORM VALIDATE-DATE-LOGIC
                    ELSE
                        ADD 1 TO WS-ERROR-COUNT
                        STRING " [HIRE DATE:" WS-HIRE-DATE-X "]"
@@ -161,14 +204,13 @@
                        SET RECORD-INVALID TO TRUE
                        PERFORM 2000-WRITE-VALIDATION-ERROR
                    END-IF
-
                .
 
-               2000-WRITE-VALIDATION-ERROR
+               2000-WRITE-VALIDATION-ERROR.
                    DISPLAY WS-ERROR-BUFFER
                .
 
-               3000-ABORT-RUN
+               3000-ABORT-RUN.
                    DISPLAY "Programm execution was aborted."
                    STOP RUN
                .
