@@ -70,9 +70,11 @@
 
                PROCEDURE DIVISION.
                    DISPLAY "Execution started"
+                   OPEN INPUT PAYROLL-FILE
                    PERFORM 1000-PROCESS-FILE
                    PERFORM 1100-DISPLAY-RECORD-DEBUG-CONDITIONAL
        
+                   CLOSE PAYROLL-FILE
                    DISPLAY "Execution stopped"
                    STOP RUN.
 
