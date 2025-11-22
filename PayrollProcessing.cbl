@@ -97,19 +97,30 @@
                    05  WS-ERROR-BUFFER      PIC X(500) VALUE SPACES.
                    05  WS-ERROR-PTR         PIC 999 VALUE 1.
                    05  WS-ERROR-COUNT       PIC 99 VALUE ZERO.
+      
+               01  WS-CONTROL-FIELDS.
+                   05  WS-PREV-DEPT     PIC X(3) VALUE SPACES.
+                   05  WS-DEPT-TOTAL    PIC S9(9)V99 COMP-3 VALUE ZERO.
+                   05  WS-DEPT-COUNT    PIC S9(5) COMP VALUE ZERO.
+                   05  WS-GRAND-TOTAL   PIC S9(11)V99 COMP-3 VALUE ZERO.
+                   05  WS-GRAND-COUNT   PIC S9(7) COMP VALUE ZERO.
 
                PROCEDURE DIVISION.
+              
                    DISPLAY "Execution started"
                    
-                   
-                   
-                   PERFORM 1000-INPUT-PROCEDURE
-                   
-                   
-
-                   
+      *             SORT SORT-WORK
+      *                 ON DESCENDING KEY SR-TOTAL-PAY
+      *                 ON ASCENDING KEY SR-DEPT
+      *                 INPUT PROCEDURE IS 1000-INPUT-PROCEDURE
+      *                 OUTPUT PROCEDURE IS 4000-OUTPUT-PROCEDURE
+      *     
+      *                 DISPLAY 'PAYROLL PROCESSING COMPLETE'
+      *                 DISPLAY 'TOTAL EMPLOYEES: ' WS-GRAND-COUNT
+      *                 DISPLAY 'TOTAL PAYROLL: ' WS-GRAND-TOTAL
+                    
                    DISPLAY "Execution stopped"
-                   STOP RUN.
+                   GOBACK.
 
                1000-INPUT-PROCEDURE.
                    OPEN INPUT PAYROLL-FILE
@@ -294,6 +305,10 @@
                3000-ABORT-RUN.
                    DISPLAY "Programm execution was aborted."
                    STOP RUN
+               .
+
+
+               4000-OUTPUT-PROCEDURE.
                .
 
                END PROGRAM PayrollProcessing.
