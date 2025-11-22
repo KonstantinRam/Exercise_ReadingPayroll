@@ -43,7 +43,8 @@
            05  SR-FIRSTNAME         PIC X(15).
            05  SR-HOURS             PIC 9(3)V9.
            05  SR-RATE              PIC 9(3)V99.
-           05  SR-HIRE-DATE         PIC 9(6).    
+           05  SR-HIRE-DATE         PIC 9(6).  
+           05  SR-OT-PAY     PIC S9(7)V99 COMP-3.  
 
 
 
@@ -136,6 +137,11 @@
            05 WS-DEPT-TABLE-SENTINEL PIC X(7) VALUE '*!END!*'.
       *> I don't use SENTINEL for this table, added just to remember they may exist. 
 
+
+      *> ERROR I got here: Creating SEPARATE PAGE-BREAKER FOR main REPORT AND OT
+      *> I have added -REP TO PAGE-BREAK, but being spoiled child OF modern IDE
+      *> refactoring Tools missed it in one place inside CODE LEADING to
+      *> compilation errors.
        01  WS-PAGE-BREAK-REP.
            05  WS-PAGE-NO-REP        PIC S9(3) COMP VALUE 0.
            05  WS-LINE-COUNT-REP     PIC S9(3) COMP VALUE 99.
@@ -217,6 +223,7 @@
        01  WS-OVERTIME-HEADER.
            05  FILLER            PIC X(40) VALUE SPACES.
            05  FILLER            PIC X(20) VALUE 'OVERTIME REPORT'.
+           05  OT-PAGE-NO        PIC ZZ9.
        
        01  WS-OVERTIME-DETAIL.
            05  OT-EMP-ID         PIC X(8).
@@ -237,10 +244,8 @@
                INPUT PROCEDURE IS 1000-INPUT-PROCEDURE
                OUTPUT PROCEDURE IS 4000-OUTPUT-PROCEDURE
            
-               DISPLAY 'PAYROLL PROCESSING COMPLETE'
-               DISPLAY 'TOTAL EMPLOYEES: ' WS-GRAND-COUNT
-               DISPLAY 'TOTAL PAYROLL: ' WS-GRAND-TOTAL
-                    
+           PERFORM 4600-WRITE-GRAND-TOTAL
+                      
            DISPLAY "Execution stopped"
            GOBACK.
 
@@ -410,6 +415,7 @@
            PERFORM 1300-CALCULATE-PAYROLL
           
            MOVE WS-TOTAL-PAY     TO SR-TOTAL-PAY
+           MOVE WS-OVERTIME-PAY  TO SR-OT-PAY
            MOVE WS-DEPT          TO SR-DEPT
            MOVE WS-EMP-ID        TO SR-EMP-ID
            MOVE WS-LASTNAME      TO SR-LASTNAME
@@ -432,7 +438,7 @@
                        OVERTIME-FILE
 
            PERFORM 4010-OUTPUT-PROCEDURE-INTERNAL
-
+           
            CLOSE REPORT-FILE
                  OVERTIME-FILE
            .
@@ -496,7 +502,11 @@
            MOVE SR-TOTAL-PAY     TO DL-TOTAL-PAY
            
            WRITE REPORT-LINE FROM WS-DETAIL-LINE
-           ADD 1 TO WS-LINE-COUNT
+           ADD 1 TO WS-LINE-COUNT-REP
+
+           IF SR-HOURS > C-WORK-HOUR-BASE
+               PERFORM 4400-WRITE-OVERTIME
+           END-IF     
            .
 
        4300-PAGE-BREAK-REP.
@@ -509,7 +519,46 @@
            WRITE REPORT-LINE FROM WS-HEADER-3
            WRITE REPORT-LINE FROM WS-HEADER-2
            
-           MOVE 5 TO WS-LINE-COUNT
+           MOVE 5 TO WS-LINE-COUNT-REP
+           .
+
+       4400-WRITE-OVERTIME.
+           IF WS-LINE-COUNT-OT > WS-MAX-LINES-OT
+               PERFORM 4500-PAGE-BREAK-OT
+           END-IF
+
+           STRING SR-LASTNAME DELIMITED BY SPACE
+                  ', ' DELIMITED BY SIZE
+                  SR-FIRSTNAME DELIMITED BY SPACE
+                  INTO OT-NAME
+           END-STRING
+           
+           MOVE SR-EMP-ID TO OT-EMP-ID
+           MOVE SR-HOURS TO OT-HOURS
+           MOVE SR-OT-PAY TO OT-PAY
+           WRITE OVERTIME-LINE FROM WS-OVERTIME-DETAIL
+           .
+
+       4500-PAGE-BREAK-OT.
+           ADD 1 TO WS-PAGE-NO-OT
+           MOVE WS-PAGE-NO-OT TO OT-PAGE-NO
+           
+           WRITE OVERTIME-LINE FROM SPACES AFTER ADVANCING PAGE
+           WRITE OVERTIME-LINE FROM WS-OVERTIME-HEADER
+           WRITE OVERTIME-LINE FROM WS-HEADER-2
+           
+           MOVE 3 TO WS-LINE-COUNT-OT
+           .
+
+       4600-WRITE-GRAND-TOTAL.
+           OPEN OUTPUT REPORT-FILE
+           MOVE WS-GRAND-TOTAL TO GTL-TOTAL
+           MOVE WS-GRAND-COUNT TO GTL-COUNT
+           
+           WRITE REPORT-LINE FROM SPACES
+           WRITE REPORT-LINE FROM WS-GRAND-TOTAL-LINE
+           WRITE REPORT-LINE FROM WS-GRAND-TOTAL-LINE-2
+           CLOSE REPORT-FILE
            .
        END PROGRAM PayrollProcessing.
        
