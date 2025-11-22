@@ -13,24 +13,24 @@
       *>           Another bug => missing 0 in from of rates.
                    FILE STATUS IS WS-FILE-STATUS. 
                
-                   SELECT SORT-WORK ASSIGN TO SORTWK01.
+      *             SELECT SORT-WORK ASSIGN TO SORTWK01.
 
                DATA DIVISION.
                FILE SECTION.
                FD PAYROLL-FILE.
                01  PAYROLL-RECORD-RAW       PIC X(80).
 
-               SD  SORT-WORK.
-               01  SORT-RECORD.
-                   05  SR-SORT-KEY.
-                       10  SR-TOTAL-PAY     PIC S9(7)V99 COMP-3.
-                       10  SR-DEPT          PIC X(3).
-                   05  SR-EMP-ID            PIC X(8).
-                   05  SR-LASTNAME          PIC X(20).
-                   05  SR-FIRSTNAME         PIC X(15).
-                   05  SR-HOURS             PIC 9(3)V9.
-                   05  SR-RATE              PIC 9(3)V99.
-                   05  SR-HIRE-DATE         PIC 9(6).
+      *         SD  SORT-WORK.
+      *         01  SORT-RECORD.
+      *             05  SR-SORT-KEY.
+      *                10  SR-TOTAL-PAY     PIC S9(7)V99 COMP-3.
+      *                 10  SR-DEPT          PIC X(3).
+      *             05  SR-EMP-ID            PIC X(8).
+      *             05  SR-LASTNAME          PIC X(20).
+      *             05  SR-FIRSTNAME         PIC X(15).
+      *             05  SR-HOURS             PIC 9(3)V9.
+      *             05  SR-RATE              PIC 9(3)V99.
+      *             05  SR-HIRE-DATE         PIC 9(6).
 
                WORKING-STORAGE SECTION. 
                01  C-WORK-HOUR-BASE         PIC 9(3) VALUE 40.
@@ -107,7 +107,7 @@
 
                PROCEDURE DIVISION.
               
-                   DISPLAY "Execution started"
+                   DISPLAY "Execution started" UPON CONSOLE
                    PERFORM 1000-INPUT-PROCEDURE
       *             SORT SORT-WORK
       *                 ON DESCENDING KEY SR-TOTAL-PAY
@@ -287,20 +287,6 @@
                    DISPLAY WS-ERROR-BUFFER
                .
 
-               2200-CALCULATE-AND-RELEASE.
-                   PERFORM 1300-CALCULATE-PAYROLL
-          
-                   MOVE WS-TOTAL-PAY     TO SR-TOTAL-PAY
-                   MOVE WS-DEPT          TO SR-DEPT
-                   MOVE WS-EMP-ID        TO SR-EMP-ID
-                   MOVE WS-LASTNAME      TO SR-LASTNAME
-                   MOVE WS-FIRSTNAME     TO SR-FIRSTNAME
-                   MOVE WS-HOURS         TO SR-HOURS
-                   MOVE WS-RATE          TO SR-RATE
-                   MOVE WS-HIRE-DATE     TO SR-HIRE-DATE
-
-                   RELEASE SORT-RECORD
-               .
 
                3000-ABORT-RUN.
                    DISPLAY "Programm execution was aborted."
