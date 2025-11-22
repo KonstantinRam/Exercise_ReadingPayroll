@@ -136,10 +136,15 @@
            05 WS-DEPT-TABLE-SENTINEL PIC X(7) VALUE '*!END!*'.
       *> I don't use SENTINEL for this table, added just to remember they may exist. 
 
-       01  WS-PAGE-BREAK.
-           05  WS-PAGE-NO        PIC S9(3) COMP VALUE 1.
-           05  WS-LINE-COUNT     PIC S9(3) COMP VALUE 99.
-           05  WS-MAX-LINES      PIC S9(3) COMP VALUE 20.
+       01  WS-PAGE-BREAK-REP.
+           05  WS-PAGE-NO-REP        PIC S9(3) COMP VALUE 0.
+           05  WS-LINE-COUNT-REP     PIC S9(3) COMP VALUE 99.
+           05  WS-MAX-LINES-REP      PIC S9(3) COMP VALUE 20.
+
+       01  WS-PAGE-BREAK-OT.
+           05  WS-PAGE-NO-OT         PIC S9(3) COMP VALUE 0.
+           05  WS-LINE-COUNT-OT      PIC S9(3) COMP VALUE 99.
+           05  WS-MAX-LINES-OT       PIC S9(3) COMP VALUE 20.
 
       *>****************************************************************
       *> REPORT LAYOUTS
@@ -147,7 +152,7 @@
        01  WS-HEADER-1.
            05  FILLER            PIC X(50) VALUE SPACES.
            05  FILLER            PIC X(32) 
-                                 VALUE 'PAYROLL REPORT - BY TOTAL PAY'.
+                                 VALUE 'PAYROLL REPORT'.
            05  FILLER            PIC X(40) VALUE SPACES.
            05  FILLER            PIC X(5) VALUE 'PAGE '.
            05  H1-PAGE-NO        PIC ZZ9.
@@ -225,7 +230,6 @@
            05  OT-PAY            PIC $$,$$9.99.
 
        PROCEDURE DIVISION.
-              
            DISPLAY "Execution started" UPON CONSOLE
            SORT SORT-WORK
                ON DESCENDING KEY SR-TOTAL-PAY
@@ -423,7 +427,6 @@
            .
      
        4000-OUTPUT-PROCEDURE.
-           INITIALIZE WS-PAGE-BREAK
            
            OPEN OUTPUT REPORT-FILE
                        OVERTIME-FILE
@@ -476,8 +479,12 @@
            ADD SR-TOTAL-PAY TO WS-GRAND-TOTAL
            ADD 1 TO WS-GRAND-COUNT
 
-           IF WS-LINE-COUNT >= WS-MAX-LINES
-               PERFORM 4300-PAGE-BREAK
+      *> ERROR that happened: I used INITIALIZE FOR LINE break earlier thinking
+      *> that it resets TO VALUE like a constractor OF SORT. Well, lesson learned, COBOL
+      *> predates such machinations AND INITIALIZE RESET everything TO 0 VALUES.
+      *> So it was breaking my PAGE BREAKER. 
+           IF WS-LINE-COUNT-REP > WS-MAX-LINES-REP
+               PERFORM 4300-PAGE-BREAK-REP
            END-IF
 
            MOVE SR-EMP-ID        TO DL-EMP-ID
@@ -492,9 +499,9 @@
            ADD 1 TO WS-LINE-COUNT
            .
 
-       4300-PAGE-BREAK.
-           ADD 1 TO WS-PAGE-NO
-           MOVE WS-PAGE-NO TO H1-PAGE-NO
+       4300-PAGE-BREAK-REP.
+           ADD 1 TO WS-PAGE-NO-REP
+           MOVE WS-PAGE-NO-REP TO H1-PAGE-NO
            
            WRITE REPORT-LINE FROM SPACES AFTER ADVANCING PAGE
            WRITE REPORT-LINE FROM WS-HEADER-1
