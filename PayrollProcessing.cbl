@@ -244,7 +244,7 @@
                INPUT PROCEDURE IS 1000-INPUT-PROCEDURE
                OUTPUT PROCEDURE IS 4000-OUTPUT-PROCEDURE
            
-           PERFORM 4600-WRITE-GRAND-TOTAL
+      *>     PERFORM 4600-WRITE-GRAND-TOTAL
                       
            DISPLAY "Execution stopped"
            GOBACK.
