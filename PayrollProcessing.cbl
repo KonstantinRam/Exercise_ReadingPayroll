@@ -31,11 +31,13 @@
            05  SR-RATE              PIC 9(3)V99.
            05  SR-HIRE-DATE         PIC 9(6).    
 
+
+
        WORKING-STORAGE SECTION. 
        01  C-WORK-HOUR-BASE         PIC 9(3) VALUE 40.
        01  C-OVERTIME-MULT          PIC 9V9 VALUE 1.5.
 
-       01  WS-DEBUG-LEVEL           PIC 9 VALUE 1.
+       01  WS-DEBUG-LEVEL           PIC 9 VALUE 0.
            88  DEBUG-OFF            VALUE 0.
            88  DEBUG-ON             VALUE 1.
 
@@ -79,6 +81,7 @@
            05  WS-OVERTIME-HRS      PIC S9(3)V9 VALUE 0 COMP-3.
            05  WS-REGULAR-PAY       PIC S9(8)V99 VALUE 0 COMP-3.
            05  WS-OVERTIME-PAY      PIC S9(8)V99 VALUE 0 COMP-3.
+           05  WS-OVERTIME-RATE     PIC S9(4)V99 VALUE 0 COMP-3.
 
        01 WS-PAYROLL-DSP.
           05  WS-TOTAL-PAY-DSP     PIC Z9.9 VALUE '0'.
@@ -104,10 +107,20 @@
            05  WS-GRAND-TOTAL   PIC S9(11)V99 COMP-3 VALUE ZERO.
            05  WS-GRAND-COUNT   PIC S9(7) COMP VALUE ZERO.
 
+       01  WS-SORT-EOF              PIC X VALUE 'N'.
+           88 SORT-EOF              VALUE 'Y'.
        PROCEDURE DIVISION.
               
            DISPLAY "Execution started" UPON CONSOLE
-           PERFORM 1000-INPUT-PROCEDURE
+           SORT SORT-WORK
+               ON DESCENDING KEY SR-TOTAL-PAY
+               ON ASCENDING KEY SR-DEPT
+               INPUT PROCEDURE IS 1000-INPUT-PROCEDURE
+               OUTPUT PROCEDURE IS 4000-OUTPUT-PROCEDURE
+           
+               DISPLAY 'PAYROLL PROCESSING COMPLETE'
+               DISPLAY 'TOTAL EMPLOYEES: ' WS-GRAND-COUNT
+               DISPLAY 'TOTAL PAYROLL: ' WS-GRAND-TOTAL
                     
            DISPLAY "Execution stopped"
            GOBACK.
@@ -124,8 +137,7 @@
                    MOVE PAYROLL-RECORD-RAW TO WS-INPUT-RECORD
                    PERFORM 2000-VALIDATE-AND-MOVE
                    IF RECORD-VALID
-                      CONTINUE
-      *>              PERFORM 2200-CALCULATE-AND-RELEASE
+                      PERFORM 2200-CALCULATE-AND-RELEASE
                    ELSE
       *> It would be nice to have proper error handling, but for the test task I just do DISPLAY
                      DISPLAY "Error record. EMP ID:" WS-EMP-ID
@@ -170,49 +182,47 @@
                    IF WS-OVERTIME-HRS > 0
                        
                        DISPLAY "  Overtime: "
-                               WS-OVERTIME-HRS " hr."
+                               WS-OVERTIME-HRS-DSP " hr."
                    END-IF
            .
 
        1200-CREATE-RECORD-DSP.
-                   INITIALIZE WS-RECORD-DSP
-                   MOVE WS-EMP-ID    TO WS-EMP-ID-DSP
-                   MOVE WS-LASTNAME  TO WS-LASTNAME-DSP
-                   MOVE WS-FIRSTNAME TO WS-FIRSTNAME-DSP
-                   MOVE WS-DEPT      TO WS-DEPT-DSP
-                   MOVE WS-HOURS     TO WS-HOURS-DSP
-                   MOVE WS-RATE      TO WS-RATE-DSP
-                   STRING WS-HIRE-DATE(1:2) "/"
-                          WS-HIRE-DATE(3:2) "/"
-                          WS-HIRE-DATE(5:2)
-                          DELIMITED BY SIZE
-                          INTO WS-HIRE-DATE-DSP
-                   END-STRING
+           INITIALIZE WS-RECORD-DSP
+           MOVE WS-EMP-ID    TO WS-EMP-ID-DSP
+           MOVE WS-LASTNAME  TO WS-LASTNAME-DSP
+           MOVE WS-FIRSTNAME TO WS-FIRSTNAME-DSP
+           MOVE WS-DEPT      TO WS-DEPT-DSP
+           MOVE WS-HOURS     TO WS-HOURS-DSP
+           MOVE WS-RATE      TO WS-RATE-DSP
+           STRING WS-HIRE-DATE(1:2) "/"
+                  WS-HIRE-DATE(3:2) "/"
+                  WS-HIRE-DATE(5:2)
+                  DELIMITED BY SIZE
+                  INTO WS-HIRE-DATE-DSP
+           END-STRING
            .
 
        1300-CALCULATE-PAYROLL.
-                   INITIALIZE WS-CALCULATED-PAY
+           INITIALIZE WS-CALCULATED-PAY
 
-                   IF WS-HOURS > C-WORK-HOUR-BASE
-                       COMPUTE WS-OVERTIME-HRS 
-                           = WS-HOURS - C-WORK-HOUR-BASE
-                       COMPUTE WS-REGULAR-PAY 
-                           = C-WORK-HOUR-BASE * WS-RATE
-                       COMPUTE WS-OVERTIME-PAY = 
-                           WS-OVERTIME-HRS * WS-RATE * C-OVERTIME-MULT
-                       COMPUTE WS-TOTAL-PAY = 
-                           WS-REGULAR-PAY + WS-OVERTIME-PAY
-                   ELSE
-                       COMPUTE WS-TOTAL-PAY = WS-HOURS * WS-RATE
-                   END-IF         
+           IF WS-HOURS > C-WORK-HOUR-BASE
+              COMPUTE WS-OVERTIME-HRS = WS-HOURS - C-WORK-HOUR-BASE
+              COMPUTE WS-REGULAR-PAY = C-WORK-HOUR-BASE * WS-RATE
+              COMPUTE WS-OVERTIME-RATE = WS-RATE * C-OVERTIME-MULT
+              COMPUTE WS-OVERTIME-PAY = 
+                       WS-OVERTIME-HRS * WS-OVERTIME-RATE
+              COMPUTE WS-TOTAL-PAY = WS-REGULAR-PAY + WS-OVERTIME-PAY
+           ELSE
+              COMPUTE WS-TOTAL-PAY = WS-HOURS * WS-RATE
+           END-IF
            .
 
        1400-CREATE-PAYROLL-DSP.
-                   INITIALIZE WS-PAYROLL-DSP
-                   MOVE WS-OVERTIME-HRS TO WS-OVERTIME-HRS-DSP
-                   MOVE WS-TOTAL-PAY    TO WS-TOTAL-PAY-DSP
-                   MOVE WS-REGULAR-PAY  TO WS-REGULAR-PAY-DSP
-                   MOVE WS-OVERTIME-PAY TO WS-OVERTIME-PAY-DSP
+           INITIALIZE WS-PAYROLL-DSP
+           MOVE WS-OVERTIME-HRS TO WS-OVERTIME-HRS-DSP
+           MOVE WS-TOTAL-PAY    TO WS-TOTAL-PAY-DSP
+           MOVE WS-REGULAR-PAY  TO WS-REGULAR-PAY-DSP
+           MOVE WS-OVERTIME-PAY TO WS-OVERTIME-PAY-DSP
            .
 
        2000-VALIDATE-AND-MOVE.
@@ -268,12 +278,29 @@
                    IF WS-ERROR-COUNT > ZERO
                        SET RECORD-INVALID TO TRUE
                        PERFORM 2100-WRITE-VALIDATION-ERROR
+                   ELSE
+                       SET RECORD-VALID TO TRUE
+                   END-IF
            .
 
        2100-WRITE-VALIDATION-ERROR.
            DISPLAY WS-ERROR-BUFFER
            .
 
+       2200-CALCULATE-AND-RELEASE.
+           PERFORM 1300-CALCULATE-PAYROLL
+          
+           MOVE WS-TOTAL-PAY     TO SR-TOTAL-PAY
+           MOVE WS-DEPT          TO SR-DEPT
+           MOVE WS-EMP-ID        TO SR-EMP-ID
+           MOVE WS-LASTNAME      TO SR-LASTNAME
+           MOVE WS-FIRSTNAME     TO SR-FIRSTNAME
+           MOVE WS-HOURS         TO SR-HOURS
+           MOVE WS-RATE          TO SR-RATE
+           MOVE WS-HIRE-DATE     TO SR-HIRE-DATE
+
+           RELEASE SORT-RECORD
+           .
 
        3000-ABORT-RUN.
                    DISPLAY "Programm execution was aborted."
@@ -282,6 +309,17 @@
 
 
        4000-OUTPUT-PROCEDURE.
+
+           INITIALIZE WS-SORT-EOF
+           PERFORM UNTIL SORT-EOF
+               RETURN SORT-WORK
+                   AT END
+                       SET SORT-EOF TO TRUE
+                   NOT AT END
+                       DISPLAY SR-DEPT " " SR-EMP-ID " " SR-HOURS
+      *                 PERFORM 2200-PROCESS-SORTED-RECORD
+               END-RETURN
+           END-PERFORM
            CONTINUE
            .
 
