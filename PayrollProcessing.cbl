@@ -108,7 +108,7 @@
                PROCEDURE DIVISION.
               
                    DISPLAY "Execution started"
-                   
+                   PERFORM 1000-INPUT-PROCEDURE
       *             SORT SORT-WORK
       *                 ON DESCENDING KEY SR-TOTAL-PAY
       *                 ON ASCENDING KEY SR-DEPT
