@@ -212,26 +212,26 @@ Department code valid?
 Impact: Garbage in financial reports
 
  WHAT ACTUALLY WORKS
- SORT implementation (except for missing SORT-RETURN check)
- Basic file status structure (just incomplete)
- Attempt at error accumulation (overengineered but shows thought)
+ -SORT implementation (except for missing SORT-RETURN check)
+ -Basic file status structure (just incomplete)
+ -Attempt at error accumulation (overengineered but shows thought)
 
  
  MAINFRAME SHOP STANDARDS TO FOLLOW
-One program = one function (separate sort/validate/report)
-All numerics: COMP for integers, COMP-3 for decimals, never DISPLAY
-88-levels: Define ALL conditions explicitly
-Table searches: SEARCH ALL with ASCENDING KEY or external file
-Error handling: Write to error file, not DISPLAY
-File status: Check ALL possible conditions
-Restart logic: Required for batches >1000 records
-Page breaks: One routine, reused everywhere
-Data validation: Range check EVERYTHING
-Production mindset: No debug code, no cute messages
+-One program = one function (separate sort/validate/report)
+-All numerics: COMP for integers, COMP-3 for decimals, never DISPLAY
+-88-levels: Define ALL conditions explicitly
+-Table searches: SEARCH ALL with ASCENDING KEY or external file
+-Error handling: Write to error file, not DISPLAY
+-File status: Check ALL possible conditions
+-Restart logic: Required for batches >1000 records
+-Page breaks: One routine, reused everywhere
+-Data validation: Range check EVERYTHING
+-Production mindset: No debug code, no cute messages
 
  VERDICT
-Would this code pass production review? NO
-Would this run at 3am with 50,000 records? Not reliably
-Root cause of next production incident? Probably this program
-The Good: It works for 20 test records
-The Reality: First corrupted byte in production = phone call at 3am
+-Would this code pass production review? NO
+-Would this run at 3am with 50,000 records? Not reliably
+-Root cause of next production incident? Probably this program
+-The Good: It works for 20 test records
+-The Reality: First corrupted byte in production = phone call at 3am
