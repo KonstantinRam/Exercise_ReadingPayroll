@@ -1,0 +1,712 @@
+                                                  PAYROLL REPORT                                                          PAGE   1
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP99993   EXECUTIVE             CEO              ADM   40.0    $999.99     $39,999.60
+EMP99991   WORKAHOLIC            MAX              IT   168.0     $80.00     $18,560.00
+EMP00188   JOHNSON               WILLIAM          IT    56.4     $76.90      $4,967.74
+EMP00136   LEWIS                 EDWARD           IT    57.2     $75.22      $4,949.47
+EMP00523   HARRIS                THOMAS           FIN   57.3     $74.25      $4,896.70
+EMP00348   GREEN                 ASHLEY           FIN   59.4     $69.80      $4,823.18
+EMP00395   GREEN                 LINDA            IT    57.6     $70.12      $4,655.96
+EMP00061   RIVERA                SHARON           IT    59.6     $65.58      $4,551.25
+EMP00514   GONZALEZ              DAVID            FIN   53.4     $72.39      $4,350.57
+EMP00220   EVANS                 CAROL            LEG   52.9     $72.67      $4,312.90
+EMP00178   GARCIA                ANTHONY          LEG   55.9     $67.04      $4,280.50
+EMP00330   EVANS                 ASHLEY           FIN   49.9     $76.65      $4,204.20
+EMP00225   ADAMS                 GEORGE           FIN   58.7     $61.57      $4,189.74
+EMP00343   LOPEZ                 CAROL            LEG   55.6     $59.68      $3,783.71
+EMP00534   MITCHELL              MARY             FIN   50.5     $66.46      $3,705.14
+EMP00424   NELSON                WILLIAM          LEG   53.7     $60.64      $3,671.75
+                                                  PAYROLL REPORT                                                          PAGE   2
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00293   WHITE                 WILLIAM          FIN   59.2     $51.21      $3,523.15
+EMP00245   PEREZ                 LISA             LEG   44.1     $75.65      $3,491.22
+EMP00436   LOPEZ                 LINDA            IT    46.2     $70.72      $3,486.49
+EMP00442   JOHNSON               LISA             IT    46.8     $68.44      $3,435.68
+EMP00173   CARTER                DONALD           FIN   48.8     $64.56      $3,434.59
+EMP00525   ALLEN                 DEBORAH          IT    56.2     $53.00      $3,407.90
+EMP00041   FLORES                DAVID            FIN   52.1     $58.53      $3,403.45
+EMP00110   CAMPBELL              AMY              FIN   50.4     $58.67      $3,262.00
+EMP00368   WILLIAMS              KIMBERLY         LEG   50.0     $58.74      $3,230.70
+EMP00537   HARRIS                JENNIFER         LEG   45.7     $64.77      $3,144.55
+EMP00302   PHILLIPS              DOROTHY          IT    52.7     $52.83      $3,119.54
+EMP00251   TORRES                AMY              FIN   53.8     $51.33      $3,115.66
+EMP00118   GOMEZ                 SANDRA           IT    42.5     $70.11      $3,067.30
+EMP00239   RAMIREZ               DONNA            FIN   45.8     $62.90      $3,063.23
+EMP00267   MARTIN                JOHN             LEG   54.2     $49.67      $3,044.70
+EMP00314   ROBINSON              BRIAN            FIN   50.6     $53.82      $3,008.53
+                                                  PAYROLL REPORT                                                          PAGE   3
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00329   ROBERTS               MARK             IT    39.4     $75.66      $2,981.00
+EMP00102   PEREZ                 STEVEN           IT    37.2     $79.78      $2,967.81
+EMP00455   GREEN                 CHRISTOPHER      FIN   38.0     $78.08      $2,967.04
+EMP00371   RIVERA                JASON            LEG   39.2     $75.18      $2,947.05
+EMP00218   WRIGHT                BETTY            IT    44.0     $63.56      $2,923.76
+EMP00416   HILL                  LAURA            IT    39.9     $72.84      $2,906.31
+EMP00153   LOPEZ                 JOSHUA           FIN   37.3     $77.90      $2,905.67
+EMP00180   THOMPSON              ASHLEY           LEG   51.1     $50.90      $2,883.48
+EMP00390   RIVERA                ANDREW           FIN   46.7     $57.25      $2,865.32
+EMP00103   ADAMS                 PAUL             IT    37.1     $77.01      $2,857.07
+EMP00001   BAKER                 JESSICA          FIN   35.7     $79.94      $2,853.85
+EMP00377   ROBERTS               STEVEN           FIN   39.7     $71.70      $2,846.49
+EMP00196   NELSON                SUSAN            LEG   36.8     $77.34      $2,846.11
+EMP00465   HARRIS                GEORGE           IT    37.5     $75.77      $2,841.37
+EMP00426   SMITH                 TIMOTHY          LEG   39.3     $71.69      $2,817.41
+EMP00506   HARRIS                MARK             FIN   39.4     $71.26      $2,807.64
+                                                  PAYROLL REPORT                                                          PAGE   4
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00333   MARTIN                MICHELLE         MKT   56.6     $43.06      $2,794.59
+EMP00182   TAYLOR                KAREN            FIN   39.7     $70.34      $2,792.49
+EMP00544   THOMPSON              EDWARD           LEG   39.3     $70.91      $2,786.76
+EMP00328   WALKER                MARY             IT    39.0     $71.44      $2,786.16
+EMP00262   WALKER                BRIAN            HR    51.7     $48.32      $2,780.81
+EMP00454   KING                  ANTHONY          IT    38.6     $71.97      $2,778.04
+EMP00531   YOUNG                 BETTY            FIN   36.1     $76.50      $2,761.65
+EMP00099   LOPEZ                 KIMBERLY         FIN   39.1     $70.30      $2,748.73
+EMP00407   ROBERTS               LAURA            IT    38.7     $70.81      $2,740.34
+EMP00179   HALL                  MARK             IT    44.9     $57.72      $2,733.04
+EMP00391   RODRIGUEZ             TIMOTHY          IT    39.1     $69.86      $2,731.52
+EMP00141   WRIGHT                EMILY            HR    53.8     $44.77      $2,717.47
+EMP00192   HALL                  AMY              LEG   42.2     $62.60      $2,710.58
+EMP00425   WHITE                 KENNETH          IT    33.8     $79.93      $2,701.63
+EMP00073   NELSON                ANDREW           LEG   36.4     $73.71      $2,683.04
+EMP00283   LEE                   MARY             IT    45.3     $55.79      $2,675.10
+                                                  PAYROLL REPORT                                                          PAGE   5
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00075   DAVIS                 SUSAN            IT    36.2     $72.91      $2,639.34
+EMP00447   EVANS                 RONALD           IT    37.6     $70.19      $2,639.14
+EMP00037   YOUNG                 ROBERT           IT    35.9     $73.00      $2,620.70
+EMP00085   GREEN                 BARBARA          LEG   34.0     $76.93      $2,615.62
+EMP00351   WILLIAMS              NANCY            IT    55.0     $41.47      $2,591.80
+EMP00132   GONZALEZ              NANCY            HR    56.3     $39.95      $2,574.69
+EMP00513   MARTINEZ              TIMOTHY          MKT   54.5     $40.95      $2,528.59
+EMP00051   WILSON                RUTH             FIN   36.0     $70.10      $2,523.60
+EMP00146   HARRIS                EDWARD           IT    37.7     $66.67      $2,513.45
+EMP00217   CAMPBELL              ASHLEY           IT    37.0     $67.12      $2,483.44
+EMP00015   YOUNG                 BETTY            FIN   36.1     $68.27      $2,464.54
+EMP00214   MARTIN                RICHARD          FIN   35.5     $69.27      $2,459.08
+EMP00400   SANCHEZ               KIMBERLY         FIN   36.5     $67.17      $2,451.70
+EMP00058   TURNER                JAMES            MKT   58.3     $36.18      $2,440.34
+EMP00205   PHILLIPS              ANGELA           HR    53.6     $40.22      $2,429.28
+EMP00213   CAMPBELL              SARAH            IT    35.3     $68.78      $2,427.93
+                                                  PAYROLL REPORT                                                          PAGE   6
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00366   RAMIREZ               DONALD           IT    31.8     $76.12      $2,420.61
+EMP00184   SANCHEZ               CAROL            LEG   37.6     $63.86      $2,401.13
+EMP00481   HERNANDEZ             GEORGE           FIN   36.4     $65.14      $2,371.09
+EMP00397   LEE                   SHARON           MKT   58.6     $34.87      $2,367.58
+EMP00242   TURNER                AMY              IT    38.5     $61.46      $2,366.21
+EMP00301   HILL                  SARAH            IT    39.1     $60.18      $2,353.03
+EMP00096   MITCHELL              DANIEL           SAL   52.7     $39.74      $2,346.64
+EMP00504   TAYLOR                STEVEN           FIN   36.8     $63.17      $2,324.65
+EMP00472   NELSON                JOSEPH           SAL   47.4     $45.29      $2,314.28
+EMP00059   WILSON                HELEN            FIN   39.6     $57.98      $2,296.00
+EMP00468   KING                  LISA             LEG   38.4     $58.56      $2,248.70
+EMP00109   JONES                 JOSHUA           SAL   59.5     $32.22      $2,231.23
+EMP00189   WHITE                 MATTHEW          SAL   48.2     $42.58      $2,226.93
+EMP00440   GARCIA                RONALD           R&D   59.4     $31.91      $2,204.88
+EMP00311   WILLIAMS              CAROL            LEG   36.0     $61.21      $2,203.56
+EMP00403   FLORES                ROBERT           LEG   38.2     $57.68      $2,203.37
+                                                  PAYROLL REPORT                                                          PAGE   7
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00228   SANCHEZ               SARAH            LEG   32.3     $67.79      $2,189.61
+EMP00064   CARTER                GEORGE           IT    39.5     $55.04      $2,174.08
+EMP00305   HALL                  BARBARA          FIN   38.2     $56.81      $2,170.14
+EMP00094   SCOTT                 MICHAEL          HR    59.1     $31.61      $2,169.93
+EMP00035   ANDERSON              GEORGE           HR    49.1     $40.20      $2,156.73
+EMP00120   JONES                 ANDREW           SAL   48.1     $41.21      $2,149.06
+EMP00543   RODRIGUEZ             DANIEL           LEG   27.5     $77.97      $2,144.17
+EMP00027   ADAMS                 ANDREW           FIN   36.8     $58.23      $2,142.86
+EMP00082   CARTER                LISA             SAL   56.3     $33.14      $2,135.87
+EMP00023   HALL                  KENNETH          HR    48.2     $40.70      $2,128.61
+EMP00332   YOUNG                 HELEN            OPS   55.0     $33.98      $2,123.75
+EMP00056   ADAMS                 MARK             IT    37.9     $55.87      $2,117.47
+EMP00088   RIVERA                ELIZABETH        IT    37.6     $56.07      $2,108.23
+EMP00452   SMITH                 JOSEPH           FIN   39.8     $52.65      $2,095.47
+EMP00498   BROWN                 ELIZABETH        SAL   49.6     $38.49      $2,093.80
+EMP00208   TURNER                JOSHUA           FIN   37.4     $55.83      $2,088.04
+                                                  PAYROLL REPORT                                                          PAGE   8
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00203   WALKER                HELEN            LEG   36.0     $57.88      $2,083.68
+EMP00448   LEE                   BETTY            FIN   36.7     $56.76      $2,083.09
+EMP00053   KING                  CHRISTOPHER      HR    53.7     $34.11      $2,065.29
+EMP00281   ROBERTS               DONNA            SEC   55.3     $32.78      $2,063.50
+EMP00382   GOMEZ                 RONALD           LEG   38.8     $53.11      $2,060.66
+EMP00057   TURNER                DONALD           FIN   37.1     $55.19      $2,047.54
+EMP00414   THOMPSON              MATTHEW          IT    46.9     $40.46      $2,037.16
+EMP00500   RAMIREZ               ANGELA           IT    42.5     $46.39      $2,029.55
+EMP00483   WHITE                 JOSHUA           IT    31.2     $64.94      $2,026.12
+EMP00209   HALL                  LINDA            HR    44.4     $43.36      $2,020.57
+EMP00350   EVANS                 DONALD           LEG   35.4     $56.92      $2,014.96
+EMP00259   CARTER                DONNA            FIN   31.8     $62.99      $2,003.08
+EMP00176   ALLEN                 LINDA            MKT   52.7     $33.79      $1,995.23
+EMP00143   THOMPSON              DEBORAH          LEG   48.2     $37.93      $1,983.69
+EMP00411   JACKSON               SANDRA           IT    26.6     $74.48      $1,981.16
+EMP00272   LEE                   WILLIAM          FIN   36.8     $53.78      $1,979.10
+                                                  PAYROLL REPORT                                                          PAGE   9
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00177   THOMAS                PAUL             FIN   35.7     $54.94      $1,961.35
+EMP00034   NGUYEN                GEORGE           LEG   45.0     $41.29      $1,961.25
+EMP00161   WILSON                DONALD           SAL   48.7     $36.96      $1,960.72
+EMP00530   THOMAS                JASON            ADM   53.1     $32.85      $1,959.43
+EMP00234   HILL                  ANDREW           HR    46.4     $39.23      $1,945.77
+EMP00114   WHITE                 ANDREW           SAL   38.9     $49.87      $1,939.94
+EMP00413   TORRES                JAMES            FIN   36.5     $52.83      $1,928.29
+EMP00238   GONZALEZ              MICHAEL          LEG   35.1     $54.89      $1,926.63
+EMP00318   ADAMS                 EMILY            SAL   57.8     $28.83      $1,922.87
+EMP00480   MOORE                 LISA             SAL   47.3     $37.48      $1,909.60
+EMP00285   ADAMS                 CHRISTOPHER      HR    38.3     $49.78      $1,906.57
+EMP00484   TURNER                KIMBERLY         LEG   35.7     $53.23      $1,900.31
+EMP00019   LOPEZ                 MARK             IT    39.3     $48.18      $1,893.47
+EMP00198   PEREZ                 ASHLEY           FIN   35.5     $52.98      $1,880.79
+EMP00149   WALKER                DAVID            SAL   39.7     $47.34      $1,879.39
+EMP00296   GARCIA                STEVEN           LEG   38.6     $48.67      $1,878.66
+                                                  PAYROLL REPORT                                                          PAGE  10
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00133   DAVIS                 BRIAN            IT    27.6     $67.94      $1,875.14
+EMP00356   CARTER                DANIEL           HR    56.7     $28.78      $1,872.13
+EMP00046   MARTINEZ              ANDREW           HR    37.7     $49.65      $1,871.80
+EMP00527   EVANS                 BRIAN            LEG   36.1     $51.83      $1,871.06
+EMP00340   WHITE                 MARY             OPS   54.8     $30.08      $1,870.97
+EMP00410   PHILLIPS              EDWARD           HR    39.0     $47.85      $1,866.15
+EMP00317   JOHNSON               MARY             FIN   35.0     $53.17      $1,860.95
+EMP00157   THOMAS                STEVEN           IT    36.7     $50.68      $1,859.95
+EMP00298   CLARK                 JESSICA          IT    39.2     $47.31      $1,854.55
+EMP00464   MARTIN                KAREN            IT    37.4     $49.12      $1,837.08
+EMP00139   CAMPBELL              MICHAEL          MKT   49.4     $33.93      $1,835.56
+EMP00496   YOUNG                 JASON            HR    49.4     $33.90      $1,833.99
+EMP00346   ROBINSON              KENNETH          IT    40.5     $44.84      $1,827.23
+EMP00130   EVANS                 JENNIFER         IT    36.0     $50.69      $1,824.84
+EMP00319   HILL                  ANDREW           LEG   39.4     $46.26      $1,822.64
+EMP00230   PHILLIPS              JOSHUA           LEG   36.0     $50.43      $1,815.48
+                                                  PAYROLL REPORT                                                          PAGE  11
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00474   GREEN                 CAROL            HR    39.3     $45.98      $1,807.01
+EMP00003   SANCHEZ               SANDRA           IT    44.1     $39.15      $1,806.75
+EMP00404   MOORE                 KIMBERLY         IT    36.4     $49.54      $1,803.25
+EMP00312   SMITH                 WILLIAM          FIN   36.5     $49.27      $1,798.35
+EMP00533   SCOTT                 LINDA            IT    23.6     $76.20      $1,798.32
+EMP00462   HALL                  STEVEN           IT    35.1     $51.13      $1,794.66
+EMP00297   DIAZ                  MICHAEL          HR    36.9     $48.60      $1,793.34
+EMP00098   LOPEZ                 HELEN            IT    36.8     $48.73      $1,793.26
+EMP00123   HERNANDEZ             BRIAN            SAL   38.6     $46.38      $1,790.26
+EMP00524   RIVERA                KENNETH          FIN   37.5     $47.53      $1,782.37
+EMP00405   GOMEZ                 MATTHEW          HR    39.8     $44.73      $1,780.25
+EMP00167   SCOTT                 NANCY            FIN   24.2     $73.50      $1,778.70
+EMP00437   FLORES                TIMOTHY          LEG   39.4     $45.00      $1,773.00
+EMP00138   BAKER                 CHRISTOPHER      MKT   39.5     $44.87      $1,772.36
+EMP00303   NGUYEN                GEORGE           LEG   37.7     $46.94      $1,769.63
+EMP00231   SANCHEZ               JOSEPH           SAL   39.3     $45.00      $1,768.50
+                                                  PAYROLL REPORT                                                          PAGE  12
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00446   YOUNG                 MATTHEW          LEG   36.7     $48.17      $1,767.83
+EMP00538   GARCIA                CHARLES          R&D   51.3     $31.01      $1,765.96
+EMP00164   ANDERSON              MATTHEW          SAL   52.9     $29.69      $1,762.03
+EMP00373   SANCHEZ               MARK             LEG   30.3     $58.09      $1,760.12
+EMP00107   JOHNSON               RUTH             HR    38.4     $45.70      $1,754.88
+EMP00539   LEWIS                 KIMBERLY         MKT   43.4     $38.73      $1,746.70
+EMP00199   WALKER                NANCY            HR    38.6     $45.13      $1,742.01
+EMP00320   THOMPSON              CAROL            IT    39.7     $43.87      $1,741.63
+EMP00089   DIAZ                  RICHARD          MKT   38.8     $44.86      $1,740.56
+EMP00160   WILSON                JOHN             HR    39.8     $43.65      $1,737.27
+EMP00148   NGUYEN                ELIZABETH        MKT   36.3     $47.84      $1,736.59
+EMP00339   WALKER                MARK             SAL   42.4     $39.79      $1,734.83
+EMP00421   JONES                 NANCY            IT    36.8     $46.99      $1,729.23
+EMP00435   JONES                 LINDA            SAL   41.4     $41.06      $1,728.62
+EMP00271   LEWIS                 SANDRA           IT    42.0     $40.20      $1,728.60
+EMP00450   YOUNG                 SUSAN            SAL   39.7     $43.53      $1,728.14
+                                                  PAYROLL REPORT                                                          PAGE  13
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00499   DIAZ                  SANDRA           LEG   35.3     $48.88      $1,725.46
+EMP00036   HERNANDEZ             KEVIN            HR    36.9     $46.74      $1,724.70
+EMP00151   TURNER                ASHLEY           IT    41.3     $41.07      $1,722.88
+EMP00207   WILLIAMS              JOSEPH           SAL   36.2     $47.43      $1,716.96
+EMP00362   RODRIGUEZ             DANIEL           SAL   35.9     $47.68      $1,711.71
+EMP00227   MOORE                 JOHN             OPS   56.6     $26.29      $1,706.13
+EMP00309   ROBERTS               SANDRA           SAL   38.3     $44.44      $1,702.05
+EMP00497   ROBINSON              SANDRA           IT    35.0     $48.56      $1,699.60
+EMP00304   GONZALEZ              RICHARD          SEC   51.5     $29.68      $1,699.18
+EMP00029   TORRES                LINDA            LEG   36.0     $47.05      $1,693.80
+EMP00174   ALLEN                 JENNIFER         LEG   36.6     $46.26      $1,693.11
+EMP00216   TAYLOR                JOHN             HR    35.0     $48.35      $1,692.25
+EMP00290   MARTIN                ELIZABETH        HR    35.8     $47.25      $1,691.55
+EMP00195   PEREZ                 DEBORAH          SAL   34.9     $48.16      $1,680.78
+EMP00142   MILLER                BETTY            IT    29.4     $57.14      $1,679.91
+EMP00186   CAMPBELL              DEBORAH          SAL   37.5     $44.63      $1,673.62
+                                                  PAYROLL REPORT                                                          PAGE  14
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00331   NGUYEN                JOSEPH           IT    37.9     $44.12      $1,672.14
+EMP00052   EVANS                 WILLIAM          SAL   35.5     $47.02      $1,669.21
+EMP00119   THOMPSON              KIMBERLY         IT    43.3     $37.09      $1,667.17
+EMP00067   ROBERTS               JOSHUA           IT    38.3     $43.34      $1,659.92
+EMP00115   YOUNG                 KENNETH          SAL   35.7     $46.21      $1,649.69
+EMP00147   RAMIREZ               TIMOTHY          SAL   35.7     $46.15      $1,647.55
+EMP00007   MOORE                 RUTH             SEC   48.3     $31.35      $1,644.26
+EMP00394   DAVIS                 ELIZABETH        MKT   37.0     $44.38      $1,642.06
+EMP00398   MILLER                SUSAN            SAL   37.3     $43.98      $1,640.45
+EMP00104   CARTER                ANTHONY          MKT   46.6     $32.87      $1,640.18
+EMP00400   BROWN                 KIMBERLY         SAL   47.8     $31.40      $1,623.38
+EMP00172   MITCHELL              HELEN            FIN   35.5     $45.65      $1,620.57
+EMP00117   MARTIN                JENNIFER         OPS   54.0     $26.54      $1,618.94
+EMP00100   ANDERSON              HELEN            SAL   36.0     $44.86      $1,614.96
+EMP00510   PEREZ                 THOMAS           MKT   54.8     $25.89      $1,610.28
+EMP00364   LOPEZ                 RICHARD          MKT   39.2     $40.85      $1,601.32
+                                                  PAYROLL REPORT                                                          PAGE  15
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00273   MILLER                RICHARD          HR    42.9     $36.06      $1,599.26
+EMP00294   MOORE                 LINDA            LEG   35.6     $44.88      $1,597.72
+EMP00542   TURNER                LINDA            FIN   36.7     $43.39      $1,592.41
+EMP00175   ROBERTS               BRIAN            R&D   46.6     $31.85      $1,589.28
+EMP00219   WILLIAMS              DANIEL           FIN   26.7     $59.30      $1,583.31
+EMP00334   LOPEZ                 CAROL            HR    39.0     $40.59      $1,583.01
+EMP00458   MILLER                CHRISTOPHER      HR    37.3     $42.36      $1,580.02
+EMP00385   WALKER                PATRICIA         IT    35.6     $44.35      $1,578.86
+EMP00381   CLARK                 KEVIN            FIN   39.1     $40.05      $1,565.95
+EMP00101   CAMPBELL              RONALD           MKT   37.2     $42.00      $1,562.40
+EMP00292   GOMEZ                 BETTY            MKT   53.3     $26.01      $1,559.23
+EMP00086   SCOTT                 RICHARD          LEG   33.3     $46.71      $1,555.44
+EMP00315   ANDERSON              LINDA            HR    42.6     $35.35      $1,551.85
+EMP00156   ROBINSON              BRIAN            SAL   35.9     $43.08      $1,546.57
+EMP00144   LEE                   ASHLEY           LEG   38.5     $40.02      $1,540.77
+EMP00254   SMITH                 BARBARA          ADM   54.6     $24.84      $1,537.59
+                                                  PAYROLL REPORT                                                          PAGE  16
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00423   JOHNSON               STEVEN           LEG   39.1     $39.11      $1,529.20
+EMP00532   WALKER                JESSICA          ADM   48.3     $29.13      $1,527.82
+EMP00367   ADAMS                 SHARON           MKT   34.9     $43.67      $1,524.08
+EMP00024   SCOTT                 SUSAN            HR    37.3     $40.74      $1,519.60
+EMP00240   ANDERSON              SHARON           MKT   36.8     $41.22      $1,516.89
+EMP00388   THOMPSON              RICHARD          FIN   36.6     $41.43      $1,516.33
+EMP00235   PHILLIPS              KAREN            FIN   36.3     $41.68      $1,512.98
+EMP00479   ADAMS                 DEBORAH          SAL   35.2     $42.95      $1,511.84
+EMP00152   MARTINEZ              GEORGE           LEG   37.5     $40.23      $1,508.62
+EMP00226   EVANS                 EDWARD           R&D   55.3     $23.96      $1,508.28
+EMP00280   GONZALEZ              MATTHEW          R&D   58.3     $22.36      $1,508.18
+EMP00072   PEREZ                 ELIZABETH        IT    38.0     $39.42      $1,497.96
+EMP00048   MARTIN                STEVEN           SEC   57.1     $22.78      $1,495.50
+EMP00017   MARTINEZ              AMY              MKT   35.6     $41.91      $1,491.99
+EMP00322   JONES                 TIMOTHY          OPS   44.1     $32.30      $1,490.64
+EMP00457   EVANS                 ANTHONY          HR    36.1     $41.24      $1,488.76
+                                                  PAYROLL REPORT                                                          PAGE  17
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00105   NGUYEN                CHRISTOPHER      LEG   37.9     $39.28      $1,488.71
+EMP00154   FLORES                ASHLEY           LEG   39.3     $37.85      $1,487.50
+EMP00002   GARCIA                EMILY            OPS   43.8     $32.36      $1,478.85
+EMP00190   PEREZ                 LAURA            ADM   53.7     $24.33      $1,473.11
+EMP00111   SANCHEZ               DONALD           HR    37.3     $39.47      $1,472.23
+EMP00360   MILLER                SANDRA           MKT   38.7     $37.95      $1,468.66
+EMP00122   TAYLOR                SHARON           SEC   51.9     $25.31      $1,464.12
+EMP00486   TAYLOR                EMILY            IT    38.1     $38.41      $1,463.42
+EMP00495   MARTINEZ              DONALD           SEC   56.5     $22.56      $1,460.76
+EMP00461   MOORE                 SARAH            IT    26.8     $54.37      $1,457.11
+EMP00045   LEE                   SHARON           IT    37.0     $39.35      $1,455.95
+EMP00233   JONES                 AMY              MKT   36.6     $39.72      $1,453.75
+EMP00210   GARCIA                DOROTHY          LEG   27.3     $53.20      $1,452.36
+EMP00490   MARTINEZ              LINDA            R&D   45.0     $30.53      $1,450.15
+EMP00264   GREEN                 CHARLES          SEC   50.9     $25.67      $1,446.45
+EMP00323   JONES                 TIMOTHY          IT    39.8     $36.33      $1,445.93
+                                                  PAYROLL REPORT                                                          PAGE  18
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00279   SCOTT                 ANDREW           IT    36.5     $39.26      $1,432.99
+EMP00134   RAMIREZ               DEBORAH          SAL   51.0     $25.17      $1,422.05
+EMP00507   RAMIREZ               ROBERT           IT    37.8     $37.58      $1,420.52
+EMP00282   MOORE                 JESSICA          SAL   35.3     $39.97      $1,410.94
+EMP00087   NELSON                PAUL             HR    38.1     $36.78      $1,401.31
+EMP00255   RODRIGUEZ             JENNIFER         IT    35.0     $39.84      $1,394.40
+EMP00379   HERNANDEZ             ANDREW           HR    37.1     $37.46      $1,389.76
+EMP00439   HARRIS                LISA             LEG   26.4     $52.48      $1,385.47
+EMP00354   NGUYEN                CAROL            OPS   51.4     $24.26      $1,385.24
+EMP00335   MARTIN                ROBERT           ADM   45.3     $28.84      $1,382.87
+EMP00276   NGUYEN                JENNIFER         HR    35.4     $38.93      $1,378.12
+EMP00517   JONES                 BARBARA          SAL   38.7     $35.59      $1,377.33
+EMP00365   NGUYEN                JOHN             LEG   38.9     $35.11      $1,365.77
+EMP00083   NELSON                GEORGE           OPS   39.4     $34.60      $1,363.24
+EMP00031   WILLIAMS              EDWARD           MKT   38.5     $35.37      $1,361.74
+EMP00236   TAYLOR                CAROL            HR    36.8     $36.83      $1,355.34
+                                                  PAYROLL REPORT                                                          PAGE  19
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00445   CARTER                DOROTHY          FIN   36.2     $37.30      $1,350.26
+EMP00197   ANDERSON              STEVEN           MKT   27.2     $49.61      $1,349.39
+EMP00224   HERNANDEZ             MICHAEL          HR    39.2     $34.32      $1,345.34
+EMP00080   CARTER                BETTY            IT    35.5     $37.89      $1,345.09
+EMP00349   RIVERA                WILLIAM          LEG   29.3     $45.86      $1,343.69
+EMP00357   ROBERTS               KEVIN            SAL   37.7     $35.57      $1,340.98
+EMP00316   BAKER                 MARK             R&D   38.8     $34.42      $1,335.49
+EMP00165   TORRES                ASHLEY           FIN   31.7     $41.98      $1,330.76
+EMP00183   ADAMS                 WILLIAM          SAL   39.0     $34.12      $1,330.68
+EMP00438   RIVERA                RICHARD          HR    35.9     $36.90      $1,324.71
+EMP00313   GOMEZ                 AMY              FIN   28.7     $46.02      $1,320.77
+EMP00275   PEREZ                 SARAH            SEC   53.9     $21.61      $1,314.89
+EMP00250   MOORE                 EDWARD           MKT   37.2     $35.30      $1,313.16
+EMP00324   SANCHEZ               BARBARA          SAL   40.9     $31.69      $1,310.37
+EMP00263   JONES                 SUSAN            SAL   39.3     $33.19      $1,304.36
+EMP00383   TORRES                STEVEN           SAL   47.3     $25.54      $1,301.26
+                                                  PAYROLL REPORT                                                          PAGE  20
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00125   LOPEZ                 HELEN            SEC   54.2     $21.21      $1,300.10
+EMP00449   HALL                  EMILY            SEC   45.5     $26.91      $1,298.38
+EMP00106   RODRIGUEZ             BRIAN            MKT   35.3     $36.76      $1,297.62
+EMP00408   ROBINSON              TIMOTHY          ADM   37.3     $34.50      $1,286.85
+EMP00428   GOMEZ                 TIMOTHY          SEC   36.5     $34.91      $1,274.21
+EMP00244   TAYLOR                TIMOTHY          ADM   36.8     $34.62      $1,274.01
+EMP00326   NGUYEN                STEVEN           OPS   39.2     $32.50      $1,274.00
+EMP00476   SCOTT                 BETTY            MKT   36.0     $35.38      $1,273.68
+EMP00071   RAMIREZ               MARY             MKT   38.9     $32.68      $1,271.25
+EMP00194   THOMAS                DAVID            OPS   37.0     $34.31      $1,269.47
+EMP00223   ROBINSON              BETTY            R&D   37.6     $33.57      $1,262.23
+EMP00215   LOPEZ                 RUTH             ADM   39.3     $32.08      $1,260.74
+EMP00522   WILSON                MICHAEL          SEC   36.9     $34.06      $1,256.81
+EMP00097   JACKSON               AMY              R&D   37.1     $33.84      $1,255.46
+EMP00044   RIVERA                ASHLEY           SEC   39.8     $31.36      $1,248.12
+EMP00337   HARRIS                KAREN            R&D   37.3     $33.44      $1,247.31
+                                                  PAYROLL REPORT                                                          PAGE  21
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00126   MITCHELL              JASON            MKT   43.9     $27.15      $1,244.80
+EMP00078   CAMPBELL              MICHAEL          R&D   37.8     $32.86      $1,242.10
+EMP00248   CARTER                MATTHEW          FIN   34.3     $36.16      $1,240.28
+EMP00191   WILLIAMS              TIMOTHY          SEC   36.0     $34.41      $1,238.76
+EMP00076   RIVERA                DAVID            LEG   24.4     $50.71      $1,237.32
+EMP00043   RIVERA                SHARON           R&D   39.1     $31.48      $1,230.86
+EMP00503   NGUYEN                JOHN             R&D   36.0     $34.09      $1,227.24
+EMP00417   GARCIA                EMILY            OPS   36.0     $34.07      $1,226.52
+EMP00306   JACKSON               MARK             LEG   23.8     $51.40      $1,223.32
+EMP00016   RIVERA                MATTHEW          MKT   35.2     $34.72      $1,222.14
+EMP00500   KING                  ANDREW           OPS   39.6     $30.74      $1,217.30
+EMP00032   NELSON                BARBARA          ADM   36.0     $33.70      $1,213.20
+EMP00432   MARTINEZ              PAUL             R&D   44.8     $25.58      $1,207.37
+EMP00204   LEE                   KENNETH          LEG   25.4     $47.52      $1,207.00
+EMP00093   CARTER                ROBERT           SAL   28.5     $42.31      $1,205.83
+EMP00487   BAKER                 JOSEPH           MKT   37.8     $31.86      $1,204.30
+                                                  PAYROLL REPORT                                                          PAGE  22
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00252   MOORE                 EDWARD           ADM   47.5     $23.46      $1,202.32
+EMP00009   WILLIAMS              DOROTHY          SEC   35.2     $34.10      $1,200.32
+EMP00422   RODRIGUEZ             MARK             R&D   52.3     $20.52      $1,199.39
+EMP00095   WHITE                 THOMAS           R&D   35.0     $34.26      $1,199.10
+EMP00295   THOMPSON              MATTHEW          OPS   38.3     $31.30      $1,198.79
+EMP00459   RIVERA                HELEN            MKT   39.2     $30.53      $1,196.77
+EMP00232   HERNANDEZ             SANDRA           LEG   20.0     $59.79      $1,195.80
+EMP00246   DIAZ                  GEORGE           SAL   43.0     $26.87      $1,195.70
+EMP00187   HILL                  THOMAS           OPS   35.4     $33.77      $1,195.45
+EMP00482   DIAZ                  JASON            ADM   50.0     $21.66      $1,191.30
+EMP00170   NGUYEN                NANCY            SAL   41.6     $28.09      $1,191.00
+EMP00374   SMITH                 TIMOTHY          SEC   39.8     $29.90      $1,190.02
+EMP00012   PHILLIPS              DANIEL           FIN   23.9     $49.74      $1,188.78
+EMP00166   WILLIAMS              RONALD           SEC   58.2     $17.57      $1,182.37
+EMP00013   PEREZ                 MICHAEL          ADM   38.9     $30.35      $1,180.61
+EMP00033   MARTIN                JENNIFER         R&D   38.0     $31.05      $1,179.90
+                                                  PAYROLL REPORT                                                          PAGE  23
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00519   LEWIS                 JOSEPH           OPS   39.3     $30.02      $1,179.78
+EMP00430   CAMPBELL              SARAH            R&D   35.7     $32.97      $1,177.02
+EMP00022   CLARK                 LISA             SAL   36.0     $32.61      $1,173.96
+EMP00511   FLORES                GEORGE           R&D   38.1     $30.76      $1,171.95
+EMP00112   ANDERSON              PATRICIA         SEC   39.8     $29.39      $1,169.72
+EMP00341   SCOTT                 JESSICA          OPS   37.1     $31.52      $1,169.39
+EMP00375   CLARK                 RICHARD          MKT   30.2     $38.63      $1,166.62
+EMP00363   FLORES                CHRISTOPHER      R&D   39.9     $29.22      $1,165.87
+EMP00202   MARTIN                MATTHEW          OPS   35.5     $32.75      $1,162.62
+EMP00284   HARRIS                GEORGE           IT    21.0     $54.95      $1,153.95
+EMP00369   MILLER                MICHAEL          OPS   37.9     $30.43      $1,153.29
+EMP00150   TAYLOR                CHARLES          OPS   38.0     $30.29      $1,151.02
+EMP00140   NGUYEN                MARY             MKT   38.9     $29.51      $1,147.93
+EMP00063   JOHNSON               WILLIAM          R&D   35.4     $32.25      $1,141.65
+EMP00493   JOHNSON               SARAH            R&D   37.5     $30.44      $1,141.50
+EMP00108   GONZALEZ              KENNETH          SAL   38.7     $29.45      $1,139.71
+                                                  PAYROLL REPORT                                                          PAGE  24
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00258   GREEN                 ROBERT           OPS   48.4     $21.66      $1,139.31
+EMP00489   HERNANDEZ             ANTHONY          SEC   38.7     $29.42      $1,138.55
+EMP00127   JOHNSON               KENNETH          R&D   39.9     $28.53      $1,138.34
+EMP00268   ROBINSON              LISA             ADM   35.7     $31.68      $1,130.97
+EMP00380   NELSON                AMY              R&D   35.0     $32.22      $1,127.70
+EMP00520   SMITH                 LAURA            HR    39.0     $28.90      $1,127.10
+EMP00030   WILLIAMS              NANCY            R&D   35.4     $31.78      $1,125.01
+EMP00079   TURNER                JOSEPH           OPS   36.1     $31.14      $1,124.15
+EMP00081   WRIGHT                TIMOTHY          SAL   37.0     $30.35      $1,122.95
+EMP00289   BAKER                 LINDA            SEC   37.4     $29.92      $1,119.00
+EMP00471   CAMPBELL              RUTH             SAL   38.8     $28.83      $1,118.60
+EMP00541   WHITE                 DEBORAH          FIN   27.3     $40.85      $1,115.20
+EMP00355   MITCHELL              THOMAS           SEC   36.7     $30.02      $1,101.73
+EMP00070   MILLER                JOSHUA           ADM   38.9     $28.02      $1,089.97
+EMP00038   HILL                  KIMBERLY         FIN   20.1     $53.48      $1,074.94
+EMP00247   JONES                 SUSAN            OPS   51.7     $18.67      $1,074.40
+                                                  PAYROLL REPORT                                                          PAGE  25
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00005   GARCIA                JENNIFER         SEC   35.5     $30.26      $1,074.23
+EMP00221   NELSON                MARK             ADM   32.8     $32.73      $1,073.54
+EMP00018   GREEN                 SHARON           SEC   38.9     $27.54      $1,071.30
+EMP00288   JONES                 LISA             ADM   36.9     $28.98      $1,069.36
+EMP00159   ANDERSON              NANCY            ADM   35.1     $30.42      $1,067.74
+EMP00536   SCOTT                 DEBORAH          MKT   40.0     $26.50      $1,060.00
+EMP00049   JACKSON               MATTHEW          OPS   35.4     $29.84      $1,056.33
+EMP00047   RIVERA                SHARON           ADM   35.3     $29.86      $1,054.05
+EMP00066   WHITE                 JENNIFER         OPS   39.9     $26.32      $1,050.16
+EMP00386   WHITE                 SARAH            ADM   37.3     $28.08      $1,047.38
+EMP00516   RIVERA                RUTH             SAL   39.0     $26.60      $1,037.40
+EMP00201   MILLER                MICHAEL          OPS   36.0     $28.73      $1,034.28
+EMP00291   HALL                  EDWARD           SAL   39.6     $26.11      $1,033.95
+EMP00470   ROBERTS               NANCY            MKT   39.0     $26.46      $1,031.94
+EMP00456   CAMPBELL              BARBARA          SEC   36.4     $28.34      $1,031.57
+EMP00261   RAMIREZ               PATRICIA         OPS   39.1     $26.31      $1,028.72
+                                                  PAYROLL REPORT                                                          PAGE  26
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00113   LEE                   THOMAS           MKT   38.9     $26.37      $1,025.79
+EMP00393   GOMEZ                 TIMOTHY          OPS   38.4     $26.65      $1,023.36
+EMP00342   TAYLOR                ANTHONY          R&D   35.3     $28.96      $1,022.28
+EMP00237   ROBINSON              NANCY            OPS   37.7     $27.11      $1,022.04
+EMP00359   RAMIREZ               DOROTHY          HR    36.3     $28.14      $1,021.48
+EMP00477   GONZALEZ              MARK             ADM   37.6     $27.13      $1,020.08
+EMP00200   MITCHELL              RONALD           SEC   35.5     $28.63      $1,016.36
+EMP00469   ADAMS                 JESSICA          MKT   39.0     $25.95      $1,012.05
+EMP00443   FLORES                SUSAN            SEC   37.4     $26.97      $1,008.67
+EMP00528   PEREZ                 TIMOTHY          ADM   37.4     $26.92      $1,006.80
+EMP00249   TURNER                HELEN            R&D   51.7     $17.47      $1,005.34
+EMP00193   FLORES                MATTHEW          SEC   42.6     $22.78      $1,000.04
+EMP00158   PEREZ                 RICHARD          HR    39.3     $25.41        $998.61
+EMP00145   PEREZ                 JENNIFER         SAL   23.7     $42.06        $996.82
+EMP00475   EVANS                 PATRICIA         HR    37.4     $26.65        $996.71
+EMP00370   LOPEZ                 RONALD           HR    36.2     $27.49        $995.13
+                                                  PAYROLL REPORT                                                          PAGE  27
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00069   MILLER                AMY              ADM   37.8     $26.32        $994.89
+EMP00427   ROBINSON              DAVID            OPS   41.6     $23.38        $991.31
+EMP00021   HERNANDEZ             HELEN            OPS   39.2     $25.14        $985.48
+EMP00431   CLARK                 DONNA            R&D   47.9     $18.95        $982.51
+EMP00124   CAMPBELL              KEVIN            R&D   36.3     $26.98        $979.37
+EMP00068   WILSON                KEVIN            OPS   36.7     $26.65        $978.05
+EMP00392   ROBINSON              KEVIN            R&D   37.2     $26.28        $977.61
+EMP00171   WALKER                ANGELA           ADM   37.5     $25.97        $973.87
+EMP00241   MOORE                 KIMBERLY         ADM   39.6     $24.53        $971.38
+EMP00444   WHITE                 BARBARA          SEC   38.1     $25.44        $969.26
+EMP00092   CAMPBELL              PATRICIA         ADM   38.3     $25.28        $968.22
+EMP00352   HILL                  HELEN            MKT   36.2     $26.66        $965.09
+EMP00185   THOMPSON              EDWARD           R&D   53.4     $15.90        $955.59
+EMP00463   WRIGHT                HELEN            SAL   25.5     $37.44        $954.72
+EMP00327   TAYLOR                KAREN            ADM   37.4     $25.46        $952.20
+EMP00077   MITCHELL              ANDREW           R&D   35.4     $26.85        $950.49
+                                                  PAYROLL REPORT                                                          PAGE  28
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00358   MARTIN                WILLIAM          R&D   42.8     $21.48        $949.41
+EMP00286   NELSON                DOROTHY          ADM   39.7     $23.78        $944.06
+EMP00253   BROWN                 RUTH             R&D   53.7     $15.49        $937.85
+EMP00378   DAVIS                 PAUL             SEC   39.9     $23.50        $937.65
+EMP00338   EVANS                 DEBORAH          ADM   39.7     $23.56        $935.33
+EMP00055   WALKER                DONALD           HR    35.3     $26.40        $931.92
+EMP00508   SMITH                 SANDRA           FIN   26.5     $35.01        $927.76
+EMP00212   ANDERSON              WILLIAM          SEC   54.0     $15.18        $925.98
+EMP00084   GOMEZ                 BRIAN            SEC   36.2     $25.55        $924.91
+EMP00485   LOPEZ                 RICHARD          ADM   36.0     $25.66        $923.76
+EMP00361   WALKER                ASHLEY           SEC   36.3     $25.27        $917.30
+EMP00054   HARRIS                RONALD           OPS   38.0     $24.04        $913.52
+EMP00389   JOHNSON               EDWARD           R&D   53.1     $15.24        $909.06
+EMP00266   RIVERA                TIMOTHY          R&D   31.8     $28.58        $908.84
+EMP00116   CARTER                GEORGE           IT    24.4     $37.09        $904.99
+EMP00014   GOMEZ                 MARY             LEG   20.7     $43.48        $900.03
+                                                  PAYROLL REPORT                                                          PAGE  29
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00006   TURNER                ROBERT           SEC   36.7     $24.50        $899.15
+EMP00473   TORRES                KENNETH          OPS   41.5     $21.27        $898.65
+EMP00467   LOPEZ                 WILLIAM          ADM   37.9     $23.68        $897.47
+EMP00065   RIVERA                ANTHONY          SEC   39.1     $22.79        $891.08
+EMP00121   PHILLIPS              MICHELLE         SEC   29.6     $30.09        $890.66
+EMP00004   MARTINEZ              CHRISTOPHER      R&D   46.4     $17.86        $885.85
+EMP00299   HILL                  CHRISTOPHER      OPS   35.6     $24.86        $885.01
+EMP00010   GONZALEZ              WILLIAM          OPS   39.6     $22.30        $883.08
+EMP00163   LOPEZ                 KIMBERLY         OPS   46.4     $17.67        $876.40
+EMP00505   RODRIGUEZ             JESSICA          ADM   37.2     $23.55        $876.06
+EMP00050   LOPEZ                 HELEN            ADM   35.7     $24.45        $872.86
+EMP00129   HERNANDEZ             DOROTHY          ADM   27.7     $31.49        $872.27
+EMP00429   THOMAS                TIMOTHY          SEC   36.1     $24.16        $872.17
+EMP00387   BAKER                 SUSAN            R&D   43.1     $19.32        $862.63
+EMP00277   WILSON                HELEN            OPS   35.8     $24.08        $862.06
+EMP00020   GARCIA                ANGELA           R&D   37.5     $22.73        $852.37
+                                                  PAYROLL REPORT                                                          PAGE  30
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00060   LEWIS                 GEORGE           R&D   35.8     $23.58        $844.16
+EMP00256   HERNANDEZ             JOHN             ADM   36.4     $23.06        $839.38
+EMP00372   MARTINEZ              GEORGE           SEC   39.0     $21.47        $837.33
+EMP00062   NELSON                AMY              HR    29.5     $28.31        $835.14
+EMP00433   CAMPBELL              ROBERT           OPS   37.1     $22.34        $828.81
+EMP00040   NGUYEN                CAROL            OPS   28.7     $28.78        $825.98
+EMP00420   THOMPSON              KENNETH          SEC   39.6     $20.81        $824.07
+EMP00441   TURNER                DANIEL           OPS   36.0     $22.89        $824.04
+EMP00415   MARTIN                DONNA            ADM   39.7     $20.67        $820.59
+EMP00074   ADAMS                 CHRISTOPHER      SEC   36.4     $22.44        $816.81
+EMP00492   MARTIN                ANDREW           SEC   37.2     $21.86        $813.19
+EMP00128   LEWIS                 DAVID            ADM   26.8     $29.97        $803.19
+EMP00257   JONES                 BRIAN            ADM   37.5     $21.30        $798.75
+EMP00347   LEWIS                 MICHELLE         OPS   35.2     $22.61        $795.87
+EMP00162   JOHNSON               PATRICIA         R&D   36.8     $21.62        $795.61
+EMP00310   PEREZ                 MICHELLE         SEC   35.9     $22.00        $789.80
+                                                  PAYROLL REPORT                                                          PAGE  31
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00488   JOHNSON               SUSAN            SEC   36.3     $21.71        $788.07
+EMP00384   WILSON                SUSAN            OPS   36.0     $21.61        $777.96
+EMP00200   CAMPBELL              KENNETH          OPS   35.5     $21.64        $768.22
+EMP00321   MITCHELL              JESSICA          R&D   39.9     $19.14        $763.68
+EMP00418   RAMIREZ               DONALD           R&D   35.5     $21.35        $757.92
+EMP00155   JACKSON               JASON            OPS   24.0     $31.45        $754.80
+EMP00026   LOPEZ                 SHARON           MKT   27.1     $27.57        $747.14
+EMP00466   HILL                  BETTY            R&D   32.9     $22.60        $743.54
+EMP00229   THOMPSON              RUTH             R&D   38.7     $19.21        $743.42
+EMP00025   SANCHEZ               BARBARA          OPS   37.7     $19.69        $742.31
+EMP00353   ADAMS                 NANCY            SEC   35.7     $20.78        $741.84
+EMP00307   ALLEN                 DOROTHY          SAL   24.7     $29.96        $740.01
+EMP00509   HILL                  BRIAN            OPS   37.2     $19.66        $731.35
+EMP00535   TURNER                RICHARD          ADM   39.4     $18.52        $729.68
+EMP00135   LEE                   NANCY            SEC   36.8     $19.65        $723.12
+EMP00039   GREEN                 JOSHUA           ADM   37.9     $19.02        $720.85
+                                                  PAYROLL REPORT                                                          PAGE  32
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00028   SANCHEZ               NANCY            ADM   37.0     $19.37        $716.69
+EMP00091   MOORE                 BARBARA          R&D   39.3     $18.20        $715.26
+EMP00515   CARTER                ANGELA           OPS   35.8     $19.66        $703.82
+EMP00336   FLORES                JOSEPH           OPS   27.6     $25.36        $699.93
+EMP00181   MARTINEZ              DEBORAH          OPS   36.9     $18.96        $699.62
+EMP00396   SMITH                 BARBARA          SEC   39.6     $17.60        $696.96
+EMP00399   CAMPBELL              ELIZABETH        OPS   37.4     $18.54        $693.39
+EMP00270   ADAMS                 GEORGE           R&D   36.5     $18.73        $683.64
+EMP00260   JACKSON               SANDRA           R&D   23.6     $28.82        $680.15
+EMP00518   HALL                  AMY              SEC   39.7     $17.07        $677.67
+EMP00278   WILLIAMS              EDWARD           OPS   39.0     $17.36        $677.04
+EMP00376   WALKER                MICHELLE         SEC   39.6     $16.87        $668.05
+EMP00206   CARTER                MICHELLE         OPS   36.6     $18.15        $664.29
+EMP00409   HERNANDEZ             ANTHONY          SEC   39.0     $16.92        $659.88
+EMP00406   EVANS                 CHRISTOPHER      SEC   32.4     $20.35        $659.34
+EMP00168   BROWN                 RICHARD          OPS   36.8     $17.73        $652.46
+                                                  PAYROLL REPORT                                                          PAGE  33
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00526   HERNANDEZ             WILLIAM          ADM   37.6     $17.31        $650.85
+EMP00287   BAKER                 THOMAS           OPS   37.6     $17.31        $650.85
+EMP00222   WILLIAMS              ANTHONY          ADM   37.3     $17.40        $649.02
+EMP00478   LEE                   PATRICIA         OPS   39.8     $16.28        $647.94
+EMP00011   NELSON                BARBARA          ADM   39.8     $16.25        $646.75
+EMP00502   JACKSON               ELIZABETH        R&D   38.9     $16.62        $646.51
+EMP00169   WALKER                JENNIFER         ADM   37.4     $17.19        $642.90
+EMP00325   TURNER                BRIAN            SEC   37.9     $16.74        $634.44
+EMP00100   TORRES                THOMAS           OPS   39.5     $16.02        $632.79
+EMP00300   GREEN                 DEBORAH          OPS   26.5     $23.86        $632.29
+EMP00501   JONES                 PATRICIA         MKT   24.6     $25.52        $627.79
+EMP00008   HARRIS                RICHARD          R&D   39.2     $15.98        $626.41
+EMP00491   HILL                  JAMES            OPS   36.6     $17.01        $622.56
+EMP00344   MARTINEZ              BARBARA          SEC   39.4     $15.70        $618.58
+EMP00521   WRIGHT                ELIZABETH        OPS   36.4     $16.99        $618.43
+EMP00243   KING                  DONNA            SEC   37.5     $16.38        $614.25
+                                                  PAYROLL REPORT                                                          PAGE  34
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00451   CLARK                 THOMAS           R&D   38.7     $15.79        $611.07
+EMP00137   ROBINSON              JAMES            R&D   35.3     $17.08        $602.92
+EMP00401   LEE                   ASHLEY           SEC   33.1     $17.97        $594.80
+EMP00512   BROWN                 LAURA            R&D   35.8     $16.45        $588.91
+EMP00131   THOMPSON              DONALD           R&D   27.3     $21.54        $588.04
+EMP00529   PHILLIPS              MARY             SEC   35.1     $16.62        $583.36
+EMP00434   RAMIREZ               SANDRA           SEC   36.9     $15.72        $580.06
+EMP00345   LEWIS                 KEVIN            ADM   36.1     $16.01        $577.96
+EMP00211   NGUYEN                DAVID            ADM   35.3     $16.35        $577.15
+EMP00453   THOMAS                JESSICA          SEC   35.7     $15.92        $568.34
+EMP00042   MITCHELL              MARY             OPS   35.1     $16.02        $562.30
+EMP00269   THOMAS                THOMAS           R&D   20.7     $26.81        $554.96
+EMP00274   JACKSON               LISA             ADM   28.5     $19.38        $552.33
+EMP00265   GONZALEZ              DEBORAH          ADM   33.0     $16.63        $548.79
+EMP00494   MILLER                STEVEN           SEC   23.5     $23.16        $544.26
+EMP00090   TURNER                RICHARD          R&D   35.0     $15.33        $536.55
+                                                  PAYROLL REPORT                                                          PAGE  35
+------------------------------------------------------------------------------------------------------------------------------------
+EMP ID     LAST NAME             FIRST NAME       DEPT   HOURS       RATE          TOTAL PAY
+------------------------------------------------------------------------------------------------------------------------------------
+EMP00300   HALL                  KEVIN            SEC   20.7     $25.75        $533.02
+EMP00308   BAKER                 SARAH            ADM   31.2     $15.28        $476.73
+EMP00402   TURNER                HELEN            ADM   29.1     $15.67        $455.99
+EMP00412   THOMAS                ANGELA           SEC   20.5     $21.88        $448.54
+EMP00460   GREEN                 KAREN            ADM   26.4     $16.87        $445.36
+EMP00419   LEE                   CHARLES          SEC   26.4     $16.49        $435.33
+EMP00540   DIAZ                  DANIEL           R&D   23.5     $16.54        $388.69
+EMP99992   VACATION              ZERO             HR     0.0     $50.00          $0.00
+     Highest Paid: EMP99993  EXECUTIVE             CEO                 $39,999.60
+      Lowest Paid: EMP99992  VACATION              ZERO                     $0.00
+
+          DEPARTMENT COUNTS
+          ADM:     $88,884.67  COUNT:      52
+          IT :    $184,174.65  COUNT:      73
+          FIN:    $139,960.10  COUNT:      58
+          LEG:    $120,161.31  COUNT:      56
+          MKT:     $59,548.14  COUNT:      40
+          HR :     $73,958.45  COUNT:      45
+                                                  PAYROLL REPORT                                                          PAGE  36
+------------------------------------------------------------------------------------------------------------------------------------
+          DEPARTMENT COUNTS
+          SAL:     $80,720.10  COUNT:      51
+          R&D:     $57,852.86  COUNT:      57
+          OPS:     $60,268.75  COUNT:      60
+          SEC:     $58,588.19  COUNT:      60
+
+                              =========================          =========================
+                              *** GRAND TOTAL:               $924,117.22  COUNT:     552
