@@ -140,9 +140,12 @@ PERFORM VARYING DPT-IDX FROM 1 BY 1   -- Linear search
 Issue: 10KB wasted storage + O(n) search
 Impact: Memory waste and CPU burn
 Fix: Right-size table (50 max) with SEARCH ALL, or use VSAM KSDS
+
+
  PRODUCTION FAILURES WAITING TO HAPPEN
 9. Incomplete File Status Checking
-cobolOnly checking FILE-OK and FILE-EOF
+```cobol
+Only checking FILE-OK and FILE-EOF
 Missing Checks:
 
 23 (record not found)
@@ -150,7 +153,7 @@ Missing Checks:
 37 (open mode wrong)
 41 (file already open)
 46 (sequential read error)
-
+```
 Impact: Infinite loops or abends on file errors
 Fix: Complete file status validation matrix
 
