@@ -98,36 +98,48 @@ OPS: 5 employees
 (Claude automated review for the Task 2. Let Task 2 be as it is for learning purpose. Avoid it in Task 3).
 
 Task 2 - Production Code Review Results
-❌ CRITICAL FAILURES
+ CRITICAL FAILURES
 1. ABEND Risk - Unoptimized Numeric Storage
-cobol01  WS-DEBUG-LEVEL           PIC 9 VALUE 0.  -- WRONG
+```cobo
+l01  WS-DEBUG-LEVEL           PIC 9 VALUE 0.  -- WRONG
+```
 Issue: PIC 9 without COMP creates DISPLAY numeric, wasting CPU on every operation
 Impact: Excessive MIPS consumption
 Fix: Use PIC 9 COMP VALUE ZERO
+
 2. Program Termination Inconsistency
 cobolSTOP RUN in 3000-ABORT-RUN but GOBACK in mainline
 Issue: Mixed termination methods
 Impact: STOP RUN in called program terminates entire region
 Fix: Use GOBACK consistently for batch programs
-3. Uninitialized COMP-3 Fields = S0C7 Bombs
-cobolINITIALIZE WS-CALCULATED-PAY  -- Zeros out VALUE clauses
+
+4. Uninitialized COMP-3 Fields = S0C7 Bombs
+```cobol
+INITIALIZE WS-CALCULATED-PAY  -- Zeros out VALUE clauses
+```
 Issue: INITIALIZE resets VALUE clauses to zero, not to their initial values
 Impact: S0C7 abends on corrupted input
 Fix: Explicit initialization or never INITIALIZE fields with VALUE clauses
-⚠️ PERFORMANCE DISASTERS
-4. STRING Operations for Error Messages
-cobolSTRING " EMP:" WS-EMP-ID-X " ERRORS:" INTO WS-ERROR-BUFFER
+ PERFORMANCE DISASTERS
+
+6. STRING Operations for Error Messages
+```cobol
+STRING " EMP:" WS-EMP-ID-X " ERRORS:" INTO WS-ERROR-BUFFER
+```
 Issue: STRING is CPU-expensive on mainframe
 Impact: Wasted cycles building messages that might never display
 Fix: Use simple MOVEs or write structured error records
-5. Oversized Table with Linear Search
-cobol05  WS-DEPT-ENTRIES OCCURS 512 TIMES  -- 512 departments?!
+
+8. Oversized Table with Linear Search
+```cobol
+05  WS-DEPT-ENTRIES OCCURS 512 TIMES  -- 512 departments?!
 PERFORM VARYING DPT-IDX FROM 1 BY 1   -- Linear search
+```
 Issue: 10KB wasted storage + O(n) search
 Impact: Memory waste and CPU burn
 Fix: Right-size table (50 max) with SEARCH ALL, or use VSAM KSDS
-🐛 PRODUCTION FAILURES WAITING TO HAPPEN
-6. Incomplete File Status Checking
+ PRODUCTION FAILURES WAITING TO HAPPEN
+9. Incomplete File Status Checking
 cobolOnly checking FILE-OK and FILE-EOF
 Missing Checks:
 
@@ -139,36 +151,52 @@ Missing Checks:
 
 Impact: Infinite loops or abends on file errors
 Fix: Complete file status validation matrix
+
 7. No SORT-RETURN Validation
-cobolSORT SORT-WORK... -- No check of SORT-RETURN special register
+```cobol
+SORT SORT-WORK... -- No check of SORT-RETURN special register
+```
 Issue: Silent corruption if sort fails
 Impact: Wrong results in production with no indication
 Fix: Check SORT-RETURN after sort operation
+
 8. No Restart Capability
 Issue: Dies at record 15,000? Start over from record 1
 Impact: Can't meet batch window requirements
 Fix: Add checkpoint/restart logic for >1000 records
-📝 CODE QUALITY ISSUES
-9. Page Break Spaghetti
-cobolCOMPUTE WS-LINE-COUNT-TEMP = WS-LINE-COUNT-REP + 2
+
+ CODE QUALITY ISSUES
+10. Page Break Spaghetti
+```cobol
+COMPUTE WS-LINE-COUNT-TEMP = WS-LINE-COUNT-REP + 2
 IF WS-LINE-COUNT-TEMP > WS-MAX-LINES-REP...
+```
 Issue: Multiple page counters, temporary calculations, conditional space writes
 Impact: Unmaintainable mess
 Fix: One report = one counter = one page routine
-10. Debug Code in Production
-cobol01  WS-DEBUG-LEVEL PIC 9 VALUE 0.
+
+11. Debug Code in Production
+```cobol
+01  WS-DEBUG-LEVEL PIC 9 VALUE 0.
+```
 Issue: No way to control debug level in production
 Impact: Debug code shipped to production
 Fix: Use compiler directives or remove entirely
-11. Inefficient File Operations
-cobolOPEN OUTPUT REPORT-FILE
+
+12. Inefficient File Operations
+```cobol
+OPEN OUTPUT REPORT-FILE
 CLOSE REPORT-FILE  
 OPEN EXTEND REPORT-FILE  -- Three DCB operations!
+```
 Issue: Excessive file open/close operations
 Impact: I/O overhead
 Fix: Open once, write all, close once
-12. Half-Baked Data Validation
-cobolIF WS-HOURS-X IS NUMERIC  -- But no range check!
+
+13. Half-Baked Data Validation
+```cobol
+IF WS-HOURS-X IS NUMERIC  -- But no range check!
+```
 Missing Validations:
 
 Hours > 168? (impossible)
@@ -177,12 +205,14 @@ Hire date in future?
 Department code valid?
 
 Impact: Garbage in financial reports
-💡 WHAT ACTUALLY WORKS
-✅ SORT implementation (except for missing SORT-RETURN check)
-✅ Basic file status structure (just incomplete)
-✅ Attempt at error accumulation (overengineered but shows thought)
-📋 MAINFRAME SHOP STANDARDS TO FOLLOW
 
+ WHAT ACTUALLY WORKS
+ SORT implementation (except for missing SORT-RETURN check)
+ Basic file status structure (just incomplete)
+ Attempt at error accumulation (overengineered but shows thought)
+
+ 
+ MAINFRAME SHOP STANDARDS TO FOLLOW
 One program = one function (separate sort/validate/report)
 All numerics: COMP for integers, COMP-3 for decimals, never DISPLAY
 88-levels: Define ALL conditions explicitly
@@ -194,7 +224,7 @@ Page breaks: One routine, reused everywhere
 Data validation: Range check EVERYTHING
 Production mindset: No debug code, no cute messages
 
-🎯 VERDICT
+ VERDICT
 Would this code pass production review? NO
 Would this run at 3am with 50,000 records? Not reliably
 Root cause of next production incident? Probably this program
