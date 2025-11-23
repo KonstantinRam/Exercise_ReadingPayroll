@@ -95,7 +95,8 @@ FIN: 7 employees
 OPS: 5 employees
 ```
 
-(Claude automated review for the Task 2. Let Task 2 be as it is for learning purpose. Avoid it in Task 3).
+# Claude automated review for the Task 2. 
+Let Task 2 be as it is for learning purpose. Avoid it in Task 3.
 
 Task 2 - Production Code Review Results
  CRITICAL FAILURES
