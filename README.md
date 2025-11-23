@@ -94,9 +94,9 @@ OPS: 5 employees
 ```
 
 ## Success Criteria
-- [ ] Correctly reads all records from input file
-- [ ] Handles file not found error
-- [ ] Calculates pay correctly with overtime
-- [ ] Produces formatted report file
-- [ ] Summary totals are accurate
-- [ ] Code follows COBOL standards (no warnings)
+- [X] Correctly reads all records from input file
+- [X] Handles file not found error
+- [X] Calculates pay correctly with overtime
+- [X] Produces formatted report file
+- [X] Summary totals are accurate
+- [X] Code follows COBOL standards (no warnings)
