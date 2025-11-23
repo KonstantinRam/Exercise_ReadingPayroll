@@ -210,18 +210,27 @@
            05  FILLER            PIC X(2) VALUE SPACES.
            05  DL-TOTAL-PAY      PIC $$,$$$,$$9.99.
        
-       01  WS-PAY-EXTREMA.
-           05  FILLER                  PIC X(5) VALUE SPACES.
-           05 DL-PAY-EXTREMA-TYPE      PIC X(8).
-           05 FILLER                   PIC X(6) VALUE 'Paid: '.
-           05 DL-PAY-EXTREMA-ID        PIC X(8) VALUE SPACES.
-           05  FILLER                  PIC X(2) VALUE SPACES.
-           05 DL-PAY-EXTREMA-LASTNAME  PIC X(20).
-           05  FILLER                  PIC X(2) VALUE SPACES.
-           05 DL-PAY-EXTREMA-FIRSTNAME PIC X(15).
-           05  FILLER                  PIC X(2) VALUE SPACES.
-           05 DL-PAY-EXTREMA-TOTAL     PIC $$,$$$,$$9.99.
+       01  WS-PAY-HIGHEST-LINE.
+           05 FILLER                   PIC X(5) VALUE SPACES.
+           05 FILLER                   PIC X(14) VALUE 'Highest Paid: '.
+           05 DL-PAY-HIGHEST-ID        PIC X(8) VALUE SPACES.
+           05 FILLER                   PIC X(2) VALUE SPACES.
+           05 DL-PAY-HIGHEST-LASTNAME  PIC X(20).
+           05 FILLER                   PIC X(2) VALUE SPACES.
+           05 DL-PAY-HIGHEST-FIRSTNAME PIC X(15).
+           05 FILLER                   PIC X(2) VALUE SPACES.
+           05 DL-PAY-HIGHEST-TOTAL     PIC $$,$$$,$$9.99.
 
+       01  WS-PAY-LOWEST-LINE.
+           05 FILLER                   PIC X(5) VALUE SPACES.
+           05 FILLER                   PIC X(14) VALUE ' Lowest Paid: '.
+           05 DL-PAY-LOWEST-ID         PIC X(8) VALUE SPACES.
+           05 FILLER                   PIC X(2) VALUE SPACES.
+           05 DL-PAY-LOWEST-LASTNAME   PIC X(20).
+           05 FILLER                   PIC X(2) VALUE SPACES.
+           05 DL-PAY-LOWEST-FIRSTNAME  PIC X(15).
+           05 FILLER                   PIC X(2) VALUE SPACES.
+           05 DL-PAY-LOWEST-TOTAL      PIC $$,$$$,$$9.99.
 
       *> GRAND TOTAL REPORT
        01  WS-GRAND-TOTAL-LINE.
@@ -689,13 +698,11 @@
                MOVE 3 TO WS-LINE-COUNT-REP
            END-IF
            
-           INITIALIZE DL-PAY-EXTREMA-TYPE
-           MOVE "Highest" TO DL-PAY-EXTREMA-TYPE
-           MOVE WS-EPM-ID-PAY-HIGHEST    TO DL-PAY-EXTREMA-ID
-           MOVE WS-EPM-LASTNAME-HIGHEST  TO DL-PAY-EXTREMA-LASTNAME
-           MOVE WS-EPM-FIRSTNAME-HIGHEST TO DL-PAY-EXTREMA-FIRSTNAME
-           MOVE WS-EMP-TOTAL-PAY-HIGHEST TO DL-PAY-EXTREMA-TOTAL
-           WRITE REPORT-LINE FROM WS-PAY-EXTREMA
+           MOVE WS-EPM-ID-PAY-HIGHEST    TO DL-PAY-HIGHEST-ID
+           MOVE WS-EPM-LASTNAME-HIGHEST  TO DL-PAY-HIGHEST-LASTNAME
+           MOVE WS-EPM-FIRSTNAME-HIGHEST TO DL-PAY-HIGHEST-FIRSTNAME
+           MOVE WS-EMP-TOTAL-PAY-HIGHEST TO DL-PAY-HIGHEST-TOTAL
+           WRITE REPORT-LINE FROM WS-PAY-HIGHEST-LINE
 
             IF WS-LINE-COUNT-REP > WS-MAX-LINES-REP
                ADD 1 TO WS-PAGE-NO-REP
@@ -707,13 +714,11 @@
                MOVE 3 TO WS-LINE-COUNT-REP
            END-IF
            
-           INITIALIZE DL-PAY-EXTREMA-TYPE
-           MOVE " Lowest" TO DL-PAY-EXTREMA-TYPE
-           MOVE WS-EPM-ID-PAY-LOWEST    TO DL-PAY-EXTREMA-ID
-           MOVE WS-EPM-LASTNAME-LOWEST  TO DL-PAY-EXTREMA-LASTNAME
-           MOVE WS-EPM-FIRSTNAME-LOWEST TO DL-PAY-EXTREMA-FIRSTNAME
-           MOVE WS-EMP-TOTAL-PAY-LOWEST TO DL-PAY-EXTREMA-TOTAL
-           WRITE REPORT-LINE FROM WS-PAY-EXTREMA
+           MOVE WS-EPM-ID-PAY-LOWEST    TO DL-PAY-LOWEST-ID
+           MOVE WS-EPM-LASTNAME-LOWEST  TO DL-PAY-LOWEST-LASTNAME
+           MOVE WS-EPM-FIRSTNAME-LOWEST TO DL-PAY-LOWEST-FIRSTNAME
+           MOVE WS-EMP-TOTAL-PAY-LOWEST TO DL-PAY-LOWEST-TOTAL
+           WRITE REPORT-LINE FROM WS-PAY-LOWEST-LINE
            .
 
        END PROGRAM PayrollProcessing.
