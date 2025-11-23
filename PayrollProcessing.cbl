@@ -31,7 +31,7 @@
        01  REPORT-LINE           PIC X(132).
        
        FD  OVERTIME-FILE.
-       01  OVERTIME-LINE         PIC X(100).
+       01  OVERTIME-LINE         PIC X(132).
 
        SD  SORT-WORK.
        01  SORT-RECORD.
@@ -91,7 +91,21 @@
            05  WS-RATE-DSP          PIC $$$,$$9.99.
            05  WS-HIRE-DATE-DSP     PIC X(8) VALUE SPACES.
 
-       01 WS-CALCULATED-PAY.
+       01  WS-EMP-PAY-HIGHEST.
+           05 WS-EPM-ID-PAY-HIGHEST     PIC X(8) VALUE SPACES.
+           05 WS-EPM-LASTNAME-HIGHEST   PIC X(20).
+           05 WS-EPM-FIRSTNAME-HIGHEST  PIC X(15).
+           05 WS-EMP-TOTAL-PAY-HIGHEST     PIC S9(7)V99 COMP-3 VALUE 0.
+           05 WS-EMP-TOTAL-PAY-HIGHEST-DSP PIC $$,$$$,$$9.99.
+
+       01  WS-EMP-PAY-LOWEST.
+           05 WS-EPM-ID-PAY-LOWEST    PIC X(8) VALUE SPACES.
+           05 WS-EPM-LASTNAME-LOWEST  PIC X(20).
+           05 WS-EPM-FIRSTNAME-LOWEST PIC X(15).
+           05 WS-EMP-TOTAL-PAY-LOWEST PIC S9(7)V99 COMP-3 VALUE 9999999.
+           05 WS-EMP-TOTAL-PAY-LOWEST-DSP PIC $$,$$$,$$9.99.
+       
+       01  WS-CALCULATED-PAY.
            05  WS-TOTAL-PAY         PIC S9(8)V99 VALUE 0 COMP-3.
            05  WS-OVERTIME-HRS      PIC S9(3)V9 VALUE 0 COMP-3.
            05  WS-REGULAR-PAY       PIC S9(8)V99 VALUE 0 COMP-3.
@@ -105,11 +119,11 @@
           05  WS-OVERTIME-PAY-DSP  PIC $$$,$$9.99 VALUE '0'.
 
        01 WS-FILE-STATUS            PIC XX.
-          88 FILE-OK                VALUE "00".
-          88 FILE-EOF               VALUE "10".
-          88 FILE-NOT-FOUND         VALUE "35".
+           88 FILE-OK                VALUE "00".
+           88 FILE-EOF               VALUE "10".
+           88 FILE-NOT-FOUND         VALUE "35".
 
-       01 WS-DISPLAY-LINE           PIC X(80) VALUE SPACES.
+       01  WS-DISPLAY-LINE           PIC X(80) VALUE SPACES.
        01  WS-ERROR-ACCUMULATOR.
            05  WS-ERROR-BUFFER      PIC X(500) VALUE SPACES.
            05  WS-ERROR-PTR         PIC 999 VALUE 1.
@@ -152,9 +166,11 @@
            05  WS-LINE-COUNT-OT      PIC S9(3) COMP VALUE 99.
            05  WS-MAX-LINES-OT       PIC S9(3) COMP VALUE 20.
 
+       01    WS-LINE-COUNT-TEMP     PIC S9(3) COMP VALUE 99.
       *>****************************************************************
       *> REPORT LAYOUTS
       *>****************************************************************
+       
        01  WS-HEADER-1.
            05  FILLER            PIC X(50) VALUE SPACES.
            05  FILLER            PIC X(32) 
@@ -196,16 +212,7 @@
            05  FILLER            PIC X(2) VALUE SPACES.
            05  DL-TOTAL-PAY      PIC $$,$$$,$$9.99.
        
-       01  WS-DEPT-TOTAL-LINE.
-           05  FILLER            PIC X(30) VALUE SPACES.
-           05  FILLER            PIC X(25) 
-                                 VALUE '*** DEPARTMENT '.
-           05  DTL-DEPT          PIC X(3).
-           05  FILLER            PIC X(10) VALUE ' TOTAL: '.
-           05  DTL-TOTAL         PIC $$$,$$$,$$9.99.
-           05  FILLER            PIC X(10) VALUE '  COUNT: '.
-           05  DTL-COUNT         PIC ZZ,ZZ9.
-       
+      *> GRAND TOTAL REPORT
        01  WS-GRAND-TOTAL-LINE.
            05  FILLER            PIC X(30) VALUE SPACES.
            05  FILLER            PIC X(25) VALUE ALL '='.
@@ -219,10 +226,13 @@
            05  GTL-TOTAL         PIC $$$,$$$,$$9.99.
            05  FILLER            PIC X(10) VALUE '  COUNT: '.
            05  GTL-COUNT         PIC ZZ,ZZ9.
-       
+      
+      *> OVERTIME REPORT
        01  WS-OVERTIME-HEADER.
-           05  FILLER            PIC X(40) VALUE SPACES.
+           05  FILLER            PIC X(30) VALUE SPACES.
            05  FILLER            PIC X(20) VALUE 'OVERTIME REPORT'.
+           05  FILLER            PIC X(40) VALUE SPACES.
+           05  FILLER            PIC X(5) VALUE 'PAGE '.
            05  OT-PAGE-NO        PIC ZZ9.
        
        01  WS-OVERTIME-DETAIL.
@@ -236,15 +246,28 @@
            05  FILLER            PIC X(8) VALUE 'OT PAY: '.
            05  OT-PAY            PIC $$,$$9.99.
 
+      *> DEPARTMENT REPORT
+       01  WS-DEPT-HEADER.
+           05  FILLER            PIC X(10) VALUE SPACES.
+           05  FILLER            PIC X(20)
+                                 VALUE 'DEPARTMENT COUNTS'.
+       01  WS-DEPT-LINE.
+           05  FILLER            PIC X(10) VALUE SPACES.
+           05  DTL-DEPT          PIC X(3).
+           05  FILLER            PIC X(2) VALUE ': '.
+           05  DTL-TOTAL         PIC $$$,$$$,$$9.99.
+           05  FILLER            PIC X(10) VALUE '  COUNT: '.
+           05  DTL-COUNT         PIC ZZ,ZZ9.
+
        PROCEDURE DIVISION.
-           DISPLAY "Execution started" UPON CONSOLE
+           DISPLAY "Execution started"
            SORT SORT-WORK
                ON DESCENDING KEY SR-TOTAL-PAY
                ON ASCENDING KEY SR-DEPT
                INPUT PROCEDURE IS 1000-INPUT-PROCEDURE
                OUTPUT PROCEDURE IS 4000-OUTPUT-PROCEDURE
            
-      *>     PERFORM 4600-WRITE-GRAND-TOTAL
+           PERFORM 5000-WRITE-REPORT-FINALIZATION
                       
            DISPLAY "Execution stopped"
            GOBACK.
@@ -482,16 +505,26 @@
        4200-PROCESS-SORTED-RECORD.
            PERFORM 4100-ACCUMULATE-DEPT-TOTALS
 
+           IF WS-EMP-PAY-HIGHEST < SR-TOTAL-PAY
+               MOVE SR-EMP-ID        TO WS-EPM-ID-PAY-HIGHEST
+               MOVE SR-LASTNAME      TO WS-EPM-LASTNAME-HIGHEST
+               MOVE SR-FIRSTNAME     TO WS-EPM-FIRSTNAME-HIGHEST
+               MOVE SR-TOTAL-PAY     TO WS-EMP-TOTAL-PAY-HIGHEST
+               MOVE SR-TOTAL-PAY     TO WS-EMP-TOTAL-PAY-HIGHEST-DSP
+           END-IF
+
+           IF WS-EMP-PAY-LOWEST > SR-TOTAL-PAY
+               MOVE SR-EMP-ID        TO WS-EPM-ID-PAY-LOWEST
+               MOVE SR-LASTNAME      TO WS-EPM-LASTNAME-LOWEST
+               MOVE SR-FIRSTNAME     TO WS-EPM-FIRSTNAME-LOWEST
+               MOVE SR-TOTAL-PAY     TO WS-EMP-TOTAL-PAY-LOWEST
+               MOVE SR-TOTAL-PAY     TO WS-EMP-TOTAL-PAY-LOWEST-DSP
+           END-IF
+
            ADD SR-TOTAL-PAY TO WS-GRAND-TOTAL
            ADD 1 TO WS-GRAND-COUNT
 
-      *> ERROR that happened: I used INITIALIZE FOR LINE break earlier thinking
-      *> that it resets TO VALUE like a constractor OF SORT. Well, lesson learned, COBOL
-      *> predates such machinations AND INITIALIZE RESET everything TO 0 VALUES.
-      *> So it was breaking my PAGE BREAKER. 
-           IF WS-LINE-COUNT-REP > WS-MAX-LINES-REP
-               PERFORM 4300-PAGE-BREAK-REP
-           END-IF
+           PERFORM 4210-PAGE-BREAK-REP-IF-NEEDED
 
            MOVE SR-EMP-ID        TO DL-EMP-ID
            MOVE SR-LASTNAME      TO DL-LASTNAME
@@ -509,6 +542,16 @@
            END-IF     
            .
 
+       4210-PAGE-BREAK-REP-IF-NEEDED.
+      *> ERROR that happened: I used INITIALIZE FOR LINE break earlier thinking
+      *> that it resets TO VALUE like a constractor OF SORT. Well, lesson learned, COBOL
+      *> predates such machinations AND INITIALIZE RESET everything TO 0 VALUES.
+      *> So it was breaking my PAGE BREAKER. 
+           IF WS-LINE-COUNT-REP > WS-MAX-LINES-REP
+               PERFORM 4300-PAGE-BREAK-REP
+           END-IF
+
+           .
        4300-PAGE-BREAK-REP.
            ADD 1 TO WS-PAGE-NO-REP
            MOVE WS-PAGE-NO-REP TO H1-PAGE-NO
@@ -526,7 +569,10 @@
            IF WS-LINE-COUNT-OT > WS-MAX-LINES-OT
                PERFORM 4500-PAGE-BREAK-OT
            END-IF
-
+      *> ERROR I got here. Without INITIALIZE STRING KEPT garbage
+      *> that lead TO LINE SEQUENTIAL crash.
+      *> libcob: error: invalid data in LINE SEQUENTIAL file (status = 71) for file OVERTIME-FILE ('OVERTIME_RPT' => OVERTIME.RPT)
+           INITIALIZE WS-OVERTIME-DETAIL
            STRING SR-LASTNAME DELIMITED BY SPACE
                   ', ' DELIMITED BY SIZE
                   SR-FIRSTNAME DELIMITED BY SPACE
@@ -550,15 +596,121 @@
            MOVE 3 TO WS-LINE-COUNT-OT
            .
 
-       4600-WRITE-GRAND-TOTAL.
-           OPEN OUTPUT REPORT-FILE
+       5000-WRITE-REPORT-FINALIZATION.
+           OPEN EXTEND REPORT-FILE
+
+           PERFORM 5400-WRITE-LOW-HIGH-PAYED
+           PERFORM 5200-WRITE-DEPT-REPORT
+           PERFORM 5100-WRITE-GRAND-TOTAL
+           CLOSE REPORT-FILE
+           .
+
+       5100-WRITE-GRAND-TOTAL.
+           
            MOVE WS-GRAND-TOTAL TO GTL-TOTAL
            MOVE WS-GRAND-COUNT TO GTL-COUNT
-           
+      *> It may need dedicated page break that will advance whole total to a new page.
            WRITE REPORT-LINE FROM SPACES
            WRITE REPORT-LINE FROM WS-GRAND-TOTAL-LINE
            WRITE REPORT-LINE FROM WS-GRAND-TOTAL-LINE-2
-           CLOSE REPORT-FILE
            .
+       
+       5200-WRITE-DEPT-REPORT.
+           
+           IF WS-DEPT-TABLE-HIGH < 1
+               DISPLAY "UNEXPECTED ERROR, NO DEPARTMENTS FOUND."
+               GOBACK
+           END-IF
+           
+      *>   IN case dept REPORT header IS TO alone AT the BOTTOM OF the PAGE, we'd better just break to a new one.
+      *> but I don't like it. Its very clunky
+           COMPUTE WS-LINE-COUNT-TEMP = WS-LINE-COUNT-REP + 2 
+           IF WS-LINE-COUNT-TEMP > WS-MAX-LINES-REP
+               WRITE REPORT-LINE FROM SPACES
+               ADD 1 TO WS-LINE-COUNT-REP
+
+               COMPUTE WS-LINE-COUNT-TEMP = WS-LINE-COUNT-REP + 1
+               IF WS-LINE-COUNT-TEMP > WS-MAX-LINES-REP
+                   WRITE REPORT-LINE FROM SPACES
+                   ADD 1 TO WS-LINE-COUNT-REP
+               END-IF
+           ELSE
+               WRITE REPORT-LINE FROM SPACES
+               WRITE REPORT-LINE FROM WS-DEPT-HEADER
+               ADD 2 TO WS-LINE-COUNT-REP
+           END-IF
+
+           PERFORM VARYING DPT-IDX FROM 1 BY 1
+                   UNTIL DPT-IDX > WS-DEPT-TABLE-HIGH
+
+               PERFORM 5300-PAGE-BREAK-DEPT-IF-NEEDED
+               MOVE WS-DPT-CODE(DPT-IDX) TO DTL-DEPT
+               MOVE WS-DPT-COUNT(DPT-IDX) TO DTL-COUNT
+               MOVE WS-DPT-TOTAL(DPT-IDX) TO DTL-TOTAL
+               WRITE REPORT-LINE FROM WS-DEPT-LINE
+               ADD 1 TO WS-LINE-COUNT-REP
+           END-PERFORM
+           .
+       5300-PAGE-BREAK-DEPT-IF-NEEDED.
+           IF WS-LINE-COUNT-REP > WS-MAX-LINES-REP
+               PERFORM 5400-PAGE-BREAK-REP-DEPT
+           END-IF
+           .
+
+       5400-PAGE-BREAK-REP-DEPT.
+           ADD 1 TO WS-PAGE-NO-REP
+           MOVE WS-PAGE-NO-REP TO H1-PAGE-NO
+           
+           WRITE REPORT-LINE FROM SPACES AFTER ADVANCING PAGE
+           WRITE REPORT-LINE FROM WS-HEADER-1
+           WRITE REPORT-LINE FROM WS-HEADER-2
+           WRITE REPORT-LINE FROM WS-DEPT-HEADER
+
+           MOVE 4 TO WS-LINE-COUNT-REP
+           .
+
+       5400-WRITE-LOW-HIGH-PAYED.
+           IF WS-LINE-COUNT-REP > WS-MAX-LINES-REP
+               ADD 1 TO WS-PAGE-NO-REP
+               MOVE WS-PAGE-NO-REP TO H1-PAGE-NO
+               WRITE REPORT-LINE FROM SPACES AFTER ADVANCING PAGE
+               WRITE REPORT-LINE FROM WS-HEADER-1
+               WRITE REPORT-LINE FROM WS-HEADER-2
+
+               MOVE 3 TO WS-LINE-COUNT-REP
+           END-IF
+           MOVE SPACES TO WS-DISPLAY-LINE
+           STRING "Highest pay: " DELIMITED BY SIZE
+                  WS-EPM-ID-PAY-HIGHEST DELIMITED BY SPACE
+                  " " DELIMITED BY SIZE
+                  WS-EPM-FIRSTNAME-HIGHEST  DELIMITED BY SPACE
+                  " " DELIMITED BY SIZE
+                  WS-EMP-TOTAL-PAY-HIGHEST-DSP DELIMITED BY SPACE
+                  INTO WS-DISPLAY-LINE
+           END-STRING
+           WRITE REPORT-LINE FROM WS-DISPLAY-LINE
+
+            IF WS-LINE-COUNT-REP > WS-MAX-LINES-REP
+               ADD 1 TO WS-PAGE-NO-REP
+               MOVE WS-PAGE-NO-REP TO H1-PAGE-NO
+               WRITE REPORT-LINE FROM SPACES AFTER ADVANCING PAGE
+               WRITE REPORT-LINE FROM WS-HEADER-1
+               WRITE REPORT-LINE FROM WS-HEADER-2
+
+               MOVE 3 TO WS-LINE-COUNT-REP
+           END-IF
+
+           INITIALIZE WS-DISPLAY-LINE
+           STRING "Lowest pay: " DELIMITED BY SIZE
+                  WS-EPM-ID-PAY-LOWEST DELIMITED BY SPACE
+                  " " DELIMITED BY SIZE
+                  WS-EPM-FIRSTNAME-LOWEST  DELIMITED BY SPACE
+                  " " DELIMITED BY SIZE
+                  WS-EMP-TOTAL-PAY-LOWEST-DSP DELIMITED BY SPACE
+                  INTO WS-DISPLAY-LINE
+           END-STRING
+           WRITE REPORT-LINE FROM WS-DISPLAY-LINE
+           .
+
        END PROGRAM PayrollProcessing.
        
