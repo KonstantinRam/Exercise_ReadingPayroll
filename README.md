@@ -96,7 +96,8 @@ OPS: 5 employees
 ```
 
 # Claude automated review for the Task 2. 
-Let Task 2 be as it is for learning purpose. Avoid it in Task 3.
+
+*Note: These issues are preserved as learning examples. Task 3 will implement proper mainframe standards from the start.*
 
 Task 2 - Production Code Review Results
 
